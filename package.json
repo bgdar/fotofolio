@@ -10,6 +10,7 @@
     "dev": "vite",
     "preview": "vite preview"
   },
+  "homepage": "",
   "dependencies": {
     "@types/react-scroll": "^1.8.10",
     "aos": "^2.3.4",
