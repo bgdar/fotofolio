@@ -10,7 +10,7 @@
     "dev": "vite",
     "preview": "vite preview"
   },
-  "homepage": "",
+  "homepage": "https://bgdar.github.io/fotofolio",
   "dependencies": {
     "@types/react-scroll": "^1.8.10",
     "aos": "^2.3.4",
