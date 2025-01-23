@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  background: linear-gradient(to right, white, gray 60%, black 95%);
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+.active {
+  background: linear-gradient(
+    45deg,
+    #333333 20%,
+    #666666 70%
+  ); /* Gradien abu-abu */
+  border-radius: 150%; /* Bentuk lingkaran */
+  padding-top: 5px;
+  color: #fff; /* Warna teks putih */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Bayangan untuk efek depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasi saat hover */
+}
+
+.active:hover {
+  transform: scale(1.1); /* Sedikit membesar saat hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Bayangan lebih besar saat hover */
+}
+
+.text-gradient {
+  background: linear-gradient(
+    45deg,
+    #ffffff,
+    #292929
+  ); /* Gradien putih ke abu-abu */
+  -webkit-background-clip: text; /* Memotong latar belakang ke bentuk teks */
+  -webkit-text-fill-color: transparent; /* Membuat teks transparan */
+  background-clip: text; /* Untuk browser modern */
+  color: transparent; /* Fallback untuk browser yang tidak mendukung */
+  font-weight: bold; /* Tebal */
+}
+.bg-gradient {
+  background: linear-gradient(92.23deg, #000000 21.43%, #666666 100%);
+}
+.section {
+  @apply py-8 lg:py-24 lg:h-screen flex items-center;
+}
+@media (max-width: 868px) {
+  .nav-center {
+    background-color: linara-gradient(
+      92.23deg,
+      /* Hitam */ #333333 50.63%,
+      /* Abu-abu gelap */ #666666 100%,
+      /* Abu-abu sedang */ #ffffff 117.04% /* Putih */
+    );
+    right: auto; /* Hapus posisi kanan */
+    left: 50%; /* Posisi horizontal di tengah */
+    top: auto; /* Hapus posisi vertikal di tengah */
+    bottom: 20px; /* Menempel di bawah */
+    transform: translateX(-50%); /* Menggeser ke tengah secara horizontal */
+  }
+  .foter {
+    z-index: 20;
+  }
+}
