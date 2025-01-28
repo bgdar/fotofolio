@@ -3,7 +3,7 @@ import { FaGithub, FaBitbucket } from "react-icons/fa";
 export default function Header() {
   return (
     <div
-      className="container mx-auto my-2 max-w-[1000px] px-3 relative lg:absolute left-0 right-0"
+      className="container mx-auto my-2 max-w-[1000px] px-3 relative  left-0 right-0"
       data-aos="fade-down"
       data-aos-duration="1000"
     >

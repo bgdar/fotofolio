@@ -19,10 +19,10 @@ const CardFotofolio: React.FC<detail> = ({
   };
   return (
     // margin top untuk memisah card agar tidak berdempet saat di mobile
-    <div className="w-full mt-13 lg:mt-1">
+    <div className="w-full h-[300px]">
       {/* Container utama */}
       <div
-        className="bg-white h-full mt-1 flex justify-center items-center rounded-lg overflow-hidden p-5 relative group"
+        className="bg-white h-full mt-1 rounded-lg overflow-hidden p-5 relative group"
         onMouseEnter={() => handleData(true)}
         onMouseLeave={() => handleData(false)}
       >
@@ -30,7 +30,7 @@ const CardFotofolio: React.FC<detail> = ({
         <img src={image} alt="" className="w-full h-full object-cover mt-2" />
 
         {/* Overlay saat hover */}
-        <div className="absolute inset-0 p-5 bg-slate-400/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="absolute inset-0 p-5 bg-slate-400/90  opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <div className="text-center text-white transition-all duration-300 group-hover:mt-0 mt-[20px] ">
             <a
               href={link}
@@ -47,17 +47,16 @@ const CardFotofolio: React.FC<detail> = ({
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Keterangan yang muncul dari kanan */}
-      <div
-        className={` mt-2 transition-all duration-300 ease-in-out ${
-          isHovered ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"
-        }`}
-      >
-        <p className=" text-gradient font-semibold backdrop-blur-sm rounded-lg shadow-lg p-4 border-[5px] border-gray-300 transition-all duration-300 ease-in-out transform hover:scale-105 transform-origin-center">
-          {judul}
-        </p>
+        {/* Elemen kedua (muncul dengan scale saat di-hover) */}
+        <div
+          className={`absolute w-full  bg-gradient  rounded-lg bottom-0 left-0  transition-all duration-300 ease-in-out transform ${
+            isHovered ? "scale-100 opacity-100" : "scale-50 opacity-0"
+          } `}
+        >
+          <p className=" text-white font-semibold shadow-lg p-2 border-[5px] border-gray-300">
+            {judul}
+          </p>
+        </div>
       </div>
     </div>
   );
@@ -65,9 +64,12 @@ const CardFotofolio: React.FC<detail> = ({
 
 export default function Porfofio() {
   return (
-    <div id="porfolio" className="section transition-all">
-      <div className="container mx-auto max-w-[900px] px-3 pt-2 pb-20">
-        <div className="text-center flex flex-col lg:flex-row justify-between mb-[60px] ">
+    <div
+      id="porfolio"
+      className="section animate-fade-in opacity- transition-all mb-10"
+    >
+      <div className="container mx-auto max-w-[800px] px-3 pt-2 pb-20 ">
+        <div className="text-center flex flex-col lg:flex-row justify-between  ">
           <h4 className="mb-3 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-700 to-gray-900 shadow-lg">
             Projects
           </h4>
@@ -80,7 +82,7 @@ export default function Porfofio() {
             future.
           </div>
         </div>
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 text-center ">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 text-center mt-4 ">
           {/* di sini component porfolio */}
           <CardFotofolio
             judul="leaf node"
@@ -93,6 +95,12 @@ export default function Porfofio() {
             link="https://bitbucket.org/bgdar/golang-web/src/main/"
             image="porfolio/golang-web.jpg"
             descripsi=" paket golang http/net untuk membuat web server sederhana"
+          />
+          <CardFotofolio
+            judul="Tools CLI"
+            link="https://github.com/bgdar/cli-tools"
+            image="porfolio/tools-cli.jpg"
+            descripsi="Menggunakan nodejs dan Typescript untuk perkembangan project berkelanjutan "
           />
           <CardFotofolio
             judul="Tools CLI"

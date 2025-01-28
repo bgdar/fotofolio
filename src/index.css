@@ -17,7 +17,6 @@
 body {
   background: linear-gradient(to right, white, gray 60%, black 95%);
   background-size: cover;
-  overflow-x: hidden;
 }
 
 .active {
@@ -56,6 +55,7 @@ body {
 .section {
   @apply py-8 lg:py-24 lg:h-screen flex items-center;
 }
+
 @media (max-width: 868px) {
   .nav-center {
     background-color: linara-gradient(

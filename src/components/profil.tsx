@@ -81,10 +81,10 @@ export default function Profil() {
   }, [isAwal]);
 
   return (
-    <div id="profil" className="section">
-      <div className="mx-auto container max-w-[800px] mb-4 mt-0 p-2 sm:p-2">
+    <div id="profil" className="section ">
+      <div className="mx-auto container max-w-[800px]  p-2 sm:p-2">
         <div className="text-center items-center">
-          <h4 className="mb-3 text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-700 to-gray-900 shadow-lg">
+          <h4 className="mb-3 top-0 mt-0 pt-0 text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-700 to-gray-900 shadow-lg">
             Code
           </h4>
           <div className="w-full lg:pt-[35px] relative">
