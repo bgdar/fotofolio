@@ -1,4 +1,4 @@
-# Hello, I'm Muhammad Nadhar! 👋 you can say me **dar** 😁
+# Hello, I'm dar 👋 
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)](https://fotofolio-six.vercel.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/bgdar)
