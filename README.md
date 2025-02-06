@@ -18,15 +18,7 @@
 - 😄 Pronouns: He/Him
 - ⚡ Fun fact: I love exploring new technologies and building side projects in my free time!
 
----
-
-- **Description**: A brief description of your project. What problem does it solve? What technologies did you use?
-- **Tech Stack**: node.js and express.js, HTML, CSS
-- **Live Demo**: [View Live](https://your-project-demo-link.com)
-
----
-
-## 🚀 Teknologi yang Digunakan
+## 🚀 Technology Used
 
 | Teknologi                        | Ikon    |
 | -------------------------------- | ------- |
