@@ -5,22 +5,25 @@ import "aos/dist/aos.css"; // Import stylesheet AOS
 import Header from "./components/Header";
 import Navigasi from "./components/navigasi";
 import Banner from "./components/banner";
-import Profil from "./components/profil";
+import Code from "./components/code";
+import PersonalData from "./components/personalData";
 import Porfofio from "./components/porfolio";
 import Contact from "./components/contact";
 import Footer from "./components/footer";
-// import "./App.css";
 
+//AOS untuk semua yg di ca5rd
 function App() {
   useEffect(() => {
     AOS.init();
   }, []);
+
   return (
     <>
       <Header />
       <Navigasi />
       <Banner />
-      <Profil />
+      <Code />
+      <PersonalData />
       <Porfofio />
       <Contact />
       <Footer />

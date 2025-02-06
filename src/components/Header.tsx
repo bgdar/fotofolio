@@ -1,11 +1,27 @@
 import { FaGithub, FaBitbucket } from "react-icons/fa";
+import { useEffect, useState } from "react";
 
 export default function Header() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 120);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div
-      className="container mx-auto my-2 max-w-[1000px] px-3 relative  left-0 right-0"
+      className={`transition-shadow overflow-hidden left-0 right-0 w-full z-50  p-3  ${
+        scrolled
+          ? "top-0 shadow-md fixed bg-white/30 backdrop-blur-md border border-white/20 "
+          : ""
+      }`}
       data-aos="fade-down"
       data-aos-duration="1000"
+      data-aos-easing="ease-out"
     >
       <div className="flex justify-between py-2 items-center">
         <div className="flex items-center space-x-3 ">

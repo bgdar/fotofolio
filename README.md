@@ -1,9 +1,9 @@
-# Hello, I'm Muhammad Nadhar! 👋 you can say me **dar** 😁
+# Hello, I'm dar 👋
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)](https://fotofolio-six.vercel.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/bgdar)
 
-### Tampilan Portfolio
+### screenshoot
 
 ![Portfolio Screenshot](./public/img/demo-fortofolio.png)
 
@@ -20,13 +20,25 @@
 
 ---
 
-### Project 1: Leaf Node
-
-[![GitHub Repo](https://img.shields.io/badge/GitHub-Repo-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/bgdar/leaf-node)
-
 - **Description**: A brief description of your project. What problem does it solve? What technologies did you use?
 - **Tech Stack**: node.js and express.js, HTML, CSS
 - **Live Demo**: [View Live](https://your-project-demo-link.com)
+
+---
+
+## 🚀 Teknologi yang Digunakan
+
+| Teknologi                        | Ikon    |
+| -------------------------------- | ------- |
+| **React**                        | ⚛️ `⚛️` |
+| **Tailwind CSS**                 | 🎨 `🎨` |
+| **react-dom (18.3.1)**           | 🌐 `🌐` |
+| **react-icons (5.4.0)**          | 🖼️ `🖼️` |
+| **react-scroll (1.9.0)**         | 🔄 `🔄` |
+| **react-type-animation (3.2.0)** | ✍️ `✍️` |
+| **animejs**                      | 🎞️ `🎞️` |
+
+---
 
 ## GitHub Stats 📊
 

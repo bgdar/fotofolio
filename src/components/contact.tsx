@@ -1,10 +1,10 @@
 export default function Contact() {
   return (
     <div id="contact" data-aos="fade" data-aos-duration="1000">
-      <section id="contact" className="py-12 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="contact" className=" container py-12 mt-14 bg-gray-300">
+        <div className=" mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl bg-white font-bold border-2 w-[50vw] mx-auto p-2 shadow-sm shadow-slate-400 translate-y-[-2em] text-gray-900 mb-4">
               Let's Connect
             </h2>
             <p className="text-lg text-gray-600 mb-8">

@@ -13,6 +13,7 @@
   "homepage": "https://bgdar.github.io/fotofolio",
   "dependencies": {
     "@types/react-scroll": "^1.8.10",
+    "animejs": "^3.2.2",
     "aos": "^2.3.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
+    "@types/animejs": "^3.1.13",
     "@types/aos": "^3.0.7",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
