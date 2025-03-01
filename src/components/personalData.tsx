@@ -1,6 +1,6 @@
 import React from "react";
-import Words from "../personalCmpt/words";
-import Description from "../personalCmpt/Descripsi";
+import Words from "../personalCmpnt/words";
+import Description from "../personalCmpnt/Descripsi";
 const PersonalData: React.FC = () => {
   return (
     <>

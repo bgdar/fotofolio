@@ -50,7 +50,7 @@ const CardFotofolio: React.FC<detail> = ({
         </div>
         {/* Elemen kedua (muncul dengan scale saat di-hover) */}
         <div
-          className={`absolute w-full bg-[rgba(255, 255, 255, 0.4)] backdrop-blur-sm rounded-lg bottom-0 left-0 transition-all duration-300 ease-in-out transform ${
+          className={`absolute w-full bg-[rgba(255, 255, 255, 0.4)] backdrop-blur-sm rounded-lg bottom-0 left-0 transition-all text-center duration-300 ease-in-out transform ${
             isHovered ? "scale-100 opacity-100" : "scale-50 opacity-0"
           }`}
         >
