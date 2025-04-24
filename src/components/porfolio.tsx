@@ -63,8 +63,8 @@ export default function Porfofio() {
   };
 
   return (
-    <div id="portfolio" className="relative mb-14 mt-60">
-      <div className="container relative mx-auto max-w-[800px] px-3 pt-6 pb-20 bg-transparent border-2 border-slate-200">
+    <div id="porfolio" className="relative mb-14 mt-60">
+      <div className="container relative mx-auto max-w-[800px] px-3 pt-6 pb-20 bg-transparent border-4 border-slate-200">
         <h4 className="mb-3 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-700 to-gray-900 shadow-lg">
           Projects
         </h4>
@@ -107,13 +107,13 @@ export default function Porfofio() {
         </div>
 
         {/* Komponen yang Bergeser */}
-        <div className="relative w-[18%] mx-auto  h-[50px] border p-4 overflow-hidden mt-4 rounded-2xl flex ">
+        <div className="relative w-[18%] mx-auto  h-[50px p-4 mt-4 rounded-2xl flex ">
           {/* Ikon Panah yang Bergerak */}
           <div
             className={`transition-transform duration-300 ease-in-out px-4 ${
               currentIndex + itemsPerPage >= totalItems
-                ? "translate-x-6"
-                : "-translate-x-6"
+                ? "translate-x-5"
+                : "-translate-x-5"
             }`}
           >
             {/* konpponet yang bergeser  */}

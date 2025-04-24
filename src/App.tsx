@@ -10,6 +10,7 @@ import PersonalData from "./components/personalData";
 import Porfofio from "./components/porfolio";
 import Contact from "./components/contact";
 import Footer from "./components/footer";
+import Terminal from "./components/terminal";
 
 //AOS untuk semua yg di ca5rd
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <Banner />
       <Code />
       <PersonalData />
+      <Terminal />
       <Porfofio />
       <Contact />
       <Footer />

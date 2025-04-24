@@ -47,4 +47,16 @@
 
 ---
 
+### Keterangan
+
+`components` = folder utama yang berisi setiap **line page** yang tapil
+daftar subCompent pendukung :
+
+1. `bannerCmpnt` : berisi file component untuk bannner line page
+2. `codeCmpnt` : berisi file component untuk code line page
+3. `personalCmpnt` : berisi file component untuk personal page
+4.
+
+---
+
 ⭐️ Made with ❤️ by [Muhammad Nadhar](https://github.com/bgdar)

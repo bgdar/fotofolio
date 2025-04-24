@@ -19,9 +19,9 @@ export default function Header() {
           ? "top-0 shadow-md fixed bg-white/30 backdrop-blur-md border border-white/20 "
           : ""
       }`}
-      data-aos="fade-down"
-      data-aos-duration="1000"
-      data-aos-easing="ease-out"
+      // data-aos="fade-down"
+      // data-aos-duration="1000"
+      // data-aos-easing="ease-out"
     >
       <div className="flex justify-between py-2 items-center">
         <div className="flex items-center space-x-3 ">

@@ -1,15 +1,18 @@
 export default function Contact() {
   return (
     <div id="contact" data-aos="fade" data-aos-duration="1000">
-      <section id="contact" className=" container py-12 mt-14 bg-gray-300">
+      <section
+        id="contact"
+        className=" container py-12 mt-14 bg-gray-300 mx-auto rounded-t-2xl shadow-xl "
+      >
         <div className=" mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-3xl sm:text-4xl bg-white font-bold border-2 w-[50vw] mx-auto p-2 shadow-sm shadow-slate-400 translate-y-[-2em] text-gray-900 mb-4">
               Let's Connect
             </h2>
-            <p className="text-lg text-gray-600 mb-8">
-              I'm always open to discussing new projects, creative ideas, or
-              opportunities to be part of your visions.
+            <p className="text-lg text-gray-600 mb-8 font-primary">
+              I am always open to discuss new projects, creative ideas, or
+              anything related to Code "greetings interaction"
             </p>
           </div>
 
