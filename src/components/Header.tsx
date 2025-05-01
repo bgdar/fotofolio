@@ -13,10 +13,10 @@ export default function Header() {
   }, []);
 
   return (
-    <div
-      className={`transition-shadow overflow-hidden left-0 right-0 w-full z-50  p-3  ${
+    <header
+      className={`transition-all fixed overflow-hidden left-0 right-0 w-full z-50  p-3  ${
         scrolled
-          ? "top-0 shadow-md fixed bg-white/30 backdrop-blur-md border border-white/20 "
+          ? "top-0 shadow-md  bg-white/30 backdrop-blur-md border border-white/20 "
           : ""
       }`}
       // data-aos="fade-down"
@@ -57,6 +57,6 @@ export default function Header() {
           </h3>
         </div>
       </div>
-    </div>
+    </header>
   );
 }

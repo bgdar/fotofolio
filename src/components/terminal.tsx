@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { FaArrowRight, FaLinux } from "react-icons/fa";
 import { MdOutlineCircle } from "react-icons/md";
 import PackageCommad from "../terminalCmpnt/packageCommad";
+import { Link, scroller } from "react-scroll";
 
 // import { Command } from "../terminalCmpnt/handleData";
 
@@ -48,22 +49,44 @@ const Terminal = () => {
       setEnterOn(0); //gunakan jika absolute => setEnterOn((d) => d + heightDiv);
       e.currentTarget.value = "";
 
+      //Commad comad spesial
       if (value === "clear") {
         setEnterOn(0);
         e.currentTarget.value = "";
         setShowData([""]); //clear semua data
       }
+      if (value == "exit" || (value == "close" && isMaximized == true)) {
+        e.currentTarget.value = "";
+        setIsMaximized(false);
+        setShowData([""]); //clear semua data
+      }
+      if (value == "open" && isMaximized == false) {
+        setShowData([""]); //clear semua data
+        setIsMaximized(true);
+        //targetkan terminal saat commad scroll
+        scroller.scrollTo("terminal", {
+          duration: 500,
+          smooth: true,
+          offset: -100, // Mengatur offset untuk scroll
+        });
+      }
     }
   };
 
+  const date: Date = new Date();
+
   //handle effect untuk saat terminal di mount
   useEffect(() => {
+    const Navigasi = document.getElementById("navigasi") as HTMLElement; //hide Navigasi
     if (isMaximized) {
+      (Navigasi as HTMLElement).style.display = "none";
       document.body.style.overflow = "hidden"; //disable scroll body
     } else {
+      (Navigasi as HTMLElement).style.display = "";
       document.body.style.overflow = ""; //enable scroll bod
     }
     return () => {
+      (Navigasi as HTMLElement).style.display = "";
       document.body.style.overflow = ""; //cleanUp saat component di unmount
     };
   }, [isMaximized]);
@@ -74,11 +97,13 @@ const Terminal = () => {
       style={{
         backgroundColor: isMaximized ? "rgba(0, 0, 0, 0.8)" : "",
         transition: `${isMaximized ? "background-color 0.3s ease-in-out" : ""}`,
+        maxHeight: isMaximized ? "100vh" : "",
       }}
     >
       <div
         style={{
-          transform: isMaximized ? "scale(1.3)" : "scale(1)",
+          transform: isMaximized ? "scale(1.4)" : "scale(1)",
+          zIndex: isMaximized ? 1000 : 0,
           transition: "transform 0.3s ease-in-out",
         }}
         id="terminal"
@@ -91,6 +116,7 @@ const Terminal = () => {
                 <MdOutlineCircle
                   className="text-red-500 cursor-pointer disabled:cursor-not-allowed"
                   size={12}
+                  onClick={() => setIsMaximized(false)}
                 />
                 <span className="absolute z-20 border-2  rounded-lg bg-red-300 text-sm text-red-500 opacity-0 group-hover:opacity-100 group-hover:transition-all duration-500 before:content-['close']"></span>
               </span>
@@ -103,14 +129,23 @@ const Terminal = () => {
                 <span className="absolute z-20 border-2  rounded-lg bg-yellow-300 text-sm t opacity-0 group-hover:opacity-100 group-hover:transition-all duration-500 before:content-['Minimize']"></span>
               </span>
               <span className="relative group inline-block">
-                <MdOutlineCircle
-                  className="text-green-500 cursor-pointer"
-                  size={12}
-                  onClick={() => setIsMaximized(true)}
-                />
+                <Link
+                  to="terminal"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                >
+                  <MdOutlineCircle
+                    className="text-green-500 cursor-pointer"
+                    size={12}
+                    onClick={() => setIsMaximized(true)}
+                  />
+                </Link>
                 <span className="absolute z-20 border-2  rounded-lg bg-green-300 text-sm  opacity-0 group-hover:opacity-100 group-hover:transition-all duration-500 before:content-['Maximize']"></span>
               </span>
             </div>
+
             <h4 className="font-mono p-1 text-sm absolute right-4 border-2 bg-slate-300 rounded-md">
               {inputValue}
             </h4>
@@ -129,9 +164,18 @@ const Terminal = () => {
             className=" sticky  w-[98%] inset-x-0 z-10"
             style={{ top: enterOn + "px" }}
           >
-            <div className="flex items-center gap-2 text-white">
-              <FaLinux size={15} />
-              dar05@onlyUser:~$ <span className="text-[#23801b]">~</span>
+            <div
+              id="mobile-size"
+              className="flex items-center flex-wrap gap-2 text-white  "
+            >
+              <FaLinux size={16} />
+              dar05@onlyUser:~${" "}
+              <span className="text-sm text-yellow-500 ">
+                {`${date.getDate()}-${
+                  date.getMonth() + 1
+                }-${date.getFullYear()} ${date.getHours()}`}
+              </span>{" "}
+              <span className="text-[#23801b]">~</span>
             </div>
             <div className="flex items-center mt-2">
               <FaArrowRight className="text-[#23801b]" />
@@ -147,7 +191,11 @@ const Terminal = () => {
         </div>
       </div>
 
-      <span className="info group absolute bottom-0 left-0 p-2 text-sm text-gray-500 bg-[#1c1c1c] rounded-lg m-3">
+      <span
+        className="info group absolute bottom-0 left-0 p-2 text-sm text-gray-500 bg-[#1c1c1c] rounded-lg m-3"
+        data-aos="fade-right"
+        data-aos-duration="1000"
+      >
         <p>
           <span className=" text-green-800 m-1">neofetch</span> to info
         </p>

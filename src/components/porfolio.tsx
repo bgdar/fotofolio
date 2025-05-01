@@ -14,34 +14,41 @@ const dataCardForfolio = [
     judul: "Fyl Bird",
     link: "https://github.com/bgdar/flying-bird",
     image: "porfolio/fly-bird.jpg",
-    descripsi: "🔥🦜 Burung? Lembek? Coba Aja sendiri! 🚀💥",
+    descripsi: " Burung? Lembek? Coba Aja sendiri! ",
   },
   {
     judul: "daros",
     link: "https://github.com/bgdar/daros",
     image: "porfolio/daros.jpg",
-    descripsi: "🖥️ Ini  Sistem Operasi ❌🌐 Ini Website ✅",
+    descripsi: " Ini  Sistem Operasi ❌ Ini Website ✅",
+  },
+  {
+    judul: "dasboard-monitoring",
+    link: "https://github.com/bgdar/dasboard-monitoring.jpg",
+    image: "/porfolio/dasboard-monitoring.jpg",
+    descripsi:
+      "Akses  lewat browser untuk lihat status sistem kamu seperti Task Manager ",
   },
 
   {
     judul: "Golang web",
     link: "https://bitbucket.org/bgdar/golang-web/src/main/",
     image: "porfolio/golang-web.jpg",
-    descripsi: "ini Web Mirip Instagram 📷, tapi isinya Kok beda! ",
+    descripsi: "web cloning Instagram  ",
   },
   {
     judul: "Text Base RPG Game ",
     link: "https://bitbucket.org/bgdar/text-base-rpg-game/src/main/",
     image: "porfolio/text-base-rpg-game.png",
     descripsi:
-      "🖥️ Dikembangkan dengan Golang 🚀 | 🎮 Sebuah game Petualangan Fantasy yang Epik! Menggunakan CLI 🔮",
+      " Dikembangkan dengan Golang  |  Sebuah game Petualangan Fantasy yang Epik! Menggunakan CLI 🎮 ",
   },
   {
     judul: "Tools CLI",
     link: "https://github.com/bgdar/cli-tools",
     image: "porfolio/tools-cli.jpg",
     descripsi:
-      "⚡ Dibangun dengan Node.js + TypeScript untuk pengalaman cepat, efisien, dan powerfull dalam networking serta berbagai kebutuhan lainnya! 🌐💻",
+      "beberapa Tools Dibangun dengan Node.js + TypeScript   dalam networking serta berbagai kebutuhan lainnya! ",
   },
 ];
 
@@ -107,13 +114,13 @@ export default function Porfofio() {
         </div>
 
         {/* Komponen yang Bergeser */}
-        <div className="relative w-[18%] mx-auto  h-[50px p-4 mt-4 rounded-2xl flex ">
+        <div className="relative w-[18%] mx-auto  h-[50px p-4 mt-4 rounded-2xl flex justify-center ">
           {/* Ikon Panah yang Bergerak */}
           <div
             className={`transition-transform duration-300 ease-in-out px-4 ${
               currentIndex + itemsPerPage >= totalItems
-                ? "translate-x-5"
-                : "-translate-x-5"
+                ? " rotate-180"
+                : " -rotate-180"
             }`}
           >
             {/* konpponet yang bergeser  */}

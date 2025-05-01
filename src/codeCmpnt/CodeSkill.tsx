@@ -1,7 +1,9 @@
 type daftarSkill = {
   image: string;
-  description: string[];
-  alt: string;
+  description: string;
+  level: number; //tampilakan menjadi persentase
+  source: string;
+  title: string;
 };
 
 interface ProfilSkillProps {
@@ -11,75 +13,87 @@ interface ProfilSkillProps {
 // properti isloaded saya matikan karena memakan sumber daya
 const Profil: React.FC<ProfilSkillProps> = ({ item }) => {
   return (
-    <div
-      className="bg-slate-200 mx-auto flex flex-col items-center rounded-lg p-3 group overflow-hidden shadow-lg shadow-slate-400 transition-all duration-300 w-[220px] h-[260px] relative "
-      data-aos="zoom-out-up"
-      data-aos-duration="1000"
-    >
-      {/* {isLoaded ? (
+    <>
+      {/* card url */}
+      <div className="flex flex-wrap border rounded-lg overflow-hidden shadow-md w-full max-w-xl transition-all duration-300 ease-in-out">
+        <div className="flex-1 p-4">
+          <h2 className="font-semibold text-lg">{item.title}</h2>
+          <p className="text-sm text-gray-600 mb-2">{item.description}</p>
+          <a
+            href={item.source}
+            className="text-blue-500 text-sm hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {item.source}
+          </a>
+        </div>
+        <img src={item.image} alt={item.title} className="w-32 object-cover" />
+      </div>
+
+      <div
+        className=" bg-slate-200 relative mx-auto flex  rounded-lg p-2  group overflow-hidden shadow-lg shadow-slate-400 transition-all duration-300  "
+        data-aos="zoom-out-up"
+        data-aos-duration="800"
+      >
+        {/* {isLoaded ? (
         <> */}
-      <img
-        src={item.image}
-        alt={item.alt}
-        className="w-[180px] h-[180px] object-contain"
-      />
-      <div className="absolute inset-0 p-3 backdrop-blur-lg bg-slate-500/80 flex items-center justify-center opacity-0 scale-95 group-hover:scale-100 group-hover:opacity-100 transition-all ease-linear duration-300">
-        <div className="text-center w-full text-white">
-          <div className="bg-white rounded-full px-5 py-2 inline-block">
-            <h4 className="text-sky-800 font-semibold">{item.alt}</h4>
-          </div>
-          <div className="text-sm mt-2 space-y-2">
-            {item.description.map((desc, idx) => (
-              <p key={idx} className="text-sky-100">
-                {desc}
-              </p>
-            ))}
+        <img
+          src={item.image}
+          title={item.title}
+          className="w-[160px] h-[160px] object-contain"
+        />
+        {/* elemet hover  */}
+        <div className="absolute inset-0 p-3 backdrop-blur-lg bg-slate-500/80 flex items-center justify-center opacity-0 scale-95 group-hover:scale-100 group-hover:opacity-100 transition-all ease-in-out duration-300">
+          <div className="text-center w-full text-white space-y-4">
+            {/* Judul */}
+            <div className="bg-white rounded-full p-2 inline-block shadow-md">
+              <h4 className="text-sky-800 font-bold text-sm">{item.title}</h4>
+            </div>
+
+            {/* Persentase */}
+            <div className="relative mx-auto w-24 h-24 rounded-full border-4 border-white flex items-center justify-center bg-sky-600/30 shadow-inner">
+              <span className="text-2xl font-bold text-white">
+                {item.level}%
+              </span>
+
+              {/* Lingkaran Progress (opsional) */}
+              <svg className="absolute top-0 left-0 w-full h-full transform rotate-[-90deg]">
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="40%"
+                  stroke="white"
+                  strokeWidth="8%"
+                  fill="transparent"
+                  strokeDasharray="251"
+                  strokeDashoffset={`${251 - (item.level / 100) * 251}`}
+                  className="transition-all duration-300 ease-in-out"
+                />
+              </svg>
+            </div>
           </div>
         </div>
-      </div>
-      {/* </>
+
+        {/* </>
       ) : (
         <div className="w-full h-full flex items-center justify-center">
           <div className="w-6 h-6 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
         </div>
       )} */}
-    </div>
+      </div>
+    </>
   );
 };
 
-const dataSkil: daftarSkill[] = [
-  {
-    image: "./img/css.png",
-    description: ["Tailwind CSS", "Bootstrap"],
-    alt: "CSS",
-  },
-  {
-    image: "./img/html.png",
-    description: ["HTML"],
-    alt: "HTML",
-  },
-  {
-    image: "./img/js.png",
-    description: ["TypeScript", "React.js", "Express.js"],
-    alt: "JavaScript",
-  },
-  {
-    image: "./img/go.png",
-    description: ["golang"],
-    alt: "golang",
-  },
-  {
-    image: "./img/rust.png",
-    description: ["Artix", "tokio"],
-    alt: "Rust",
-  },
-  {
-    image: "./img/python.png",
-    description: ["flask", "Kivy", "pygame"],
-    alt: "python",
-  },
-];
-const CodeSkill = () => {
+interface TypeCodeSkill {
+  nextItem: number;
+  dataSkill: daftarSkill[];
+}
+
+const CodeSkill = ({ nextItem, dataSkill }: TypeCodeSkill) => {
+  //gunakan nextItems untuk menampikan berdasarkan index yang diinginkan
+
   // const [loadedIndices, setLoadedIndices] = useState<number[]>([]);
   // useEffect(() => {
   //   const timers = dataSkil.map(
@@ -95,13 +109,15 @@ const CodeSkill = () => {
 
   return (
     <>
-      {dataSkil.map((item, index) => (
+      {/* {dataSkil.map((item, index) => (
         <Profil
           key={index}
           item={item}
           // isLoaded={loadedIndices.includes(index)}
         />
-      ))}
+      ))} */}
+      {/* slice elemet agar muncull 1 per 1  */}
+      <Profil item={dataSkill[nextItem]} key={nextItem} />
     </>
   );
 };
