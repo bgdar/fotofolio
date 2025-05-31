@@ -11,7 +11,7 @@ https://github.com/user-attachments/assets/120204e4-c2a5-4a5a-a09c-9210fc0351b8
 
 ## About Me 🧑‍💻
 
-- 🌱 I’m currently learning **JavaScript | TypeScript**, **Python**,**Golang**, **Rust**,**zig** and **c++**
+- 🌱 I’m currently learning **JavaScript | TypeScript**, **Python**,**Golang**, **Rust**,**zig** , **java** and **c++**
 - 👯 I’m looking to collaborate on **open-source projects**.
 - 💬 Ask me about **web development**, **backend technologies**, or anything related to coding!
 - 📫 How to reach me: [Email](mailto:akunzero975@gmail.com) | [LinkedIn](https://www.linkedin.com/in/kosong)
@@ -23,7 +23,7 @@ https://github.com/user-attachments/assets/120204e4-c2a5-4a5a-a09c-9210fc0351b8
 ## Technology Used
 
 | `Teknologi`                      |
-| -------------------------------- |
+| -------------------------------- | --- |
 | **React**                        |
 | **Tailwind CSS**                 |
 | **react-dom (18.3.1)**           |
@@ -31,6 +31,7 @@ https://github.com/user-attachments/assets/120204e4-c2a5-4a5a-a09c-9210fc0351b8
 | **react-scroll (1.9.0)**         |
 | **react-type-animation (3.2.0)** |
 | **animejs**                      |
+| **react-syntax-highlighter**     |     |
 
 ---
 
@@ -50,6 +51,7 @@ daftar subCompent pendukung :
 2. `codeCmpnt` : berisi file component untuk code line page
 3. `personalCmpnt` : berisi file component untuk personal page
 4. `terminalCmpt` : berisi file file component untuk Terminal Configure
+5. `all-componets` : berissi componnts yang digunakan di setiap componets
 
 ---
 

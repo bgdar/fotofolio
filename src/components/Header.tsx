@@ -14,9 +14,9 @@ export default function Header() {
 
   return (
     <header
-      className={`transition-all fixed overflow-hidden left-0 right-0 w-full z-50  p-3  ${
+      className={`transition-all  overflow-hidden left-0 right-0 w-full z-50  p-3  ${
         scrolled
-          ? "top-0 shadow-md  bg-white/30 backdrop-blur-md border border-white/20 "
+          ? "top-0 shadow-md fixed bg-white/30 backdrop-blur-md border  "
           : ""
       }`}
       // data-aos="fade-down"
@@ -49,10 +49,10 @@ export default function Header() {
           </a>
         </div>
         <div className="text-gradient text-center group  ">
-          <h2 className="text-[18px] leading-none font-bold font-primary ">
+          <h2 className="text-[18px] leading-none font-semibold font-primary ">
             Muhammad
           </h2>
-          <h3 className="text-[18px] leading-none font-bold font-primary">
+          <h3 className="text-[18px] leading-none font-semibold font-primary">
             Nadhar
           </h3>
         </div>

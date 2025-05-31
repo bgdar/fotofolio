@@ -1,5 +1,6 @@
 import { TypeAnimation } from "react-type-animation";
 import React, { useState } from "react";
+import ImgWithLoading from "../all-componets/imgWithLoading";
 
 export default function Banner() {
   //membuat pergerakan pada mouse
@@ -46,10 +47,15 @@ export default function Banner() {
         {/* Lingkaran di Ujung Atas Kanan */}
         <div className="w-full ">
           <div className="h-[180px] -z-30 w-[180px] mx-auto rounded-full transition ">
-            <img
+            {/* <img
               src="./img/my-custom.png"
               alt="hay its me"
               className="border-sky-100 border-4"
+            /> */}
+            <ImgWithLoading
+              src={"/img/my-custom.png"}
+              alt="hay its me"
+              addClass="border-sky-100 border-4"
             />
           </div>
           <div className="block text-center from-neutral-700 font-bold ">
@@ -81,11 +87,9 @@ export default function Banner() {
               className="custom-animation" // Optional: Add custom class for further styling
             />
           </div>
-          <div className="max-w-[750px] text-center text-gradient">
+          <div className="max-w-[750px] text-center text-gradient ">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptatibus culpa nostrum quaerat ab mollitia, similique itaque in
-            sit obcaecati, assumenda velit asperiores saepe labore! Tempore
-            optio of
+            Voluptatibus culp optio of
           </div>
         </div>
       </div>

@@ -1,6 +1,8 @@
 import React from "react";
 import Words from "../personalCmpnt/words";
 import Description from "../personalCmpnt/Descripsi";
+
+import ImgWithLoading from "../all-componets/imgWithLoading";
 const PersonalData: React.FC = () => {
   return (
     <>
@@ -20,10 +22,15 @@ const PersonalData: React.FC = () => {
           data-aos-duration="750"
         >
           <div className="  p-2 ">
-            <img
+            {/* <img
               src="./img/bg-dar.jpg"
               alt="Profile"
               className="rounded-xl border-b-4 mx-auto object-cover object-center w-[30%] h-[10%] "
+            /> */}
+            <ImgWithLoading
+              src={"/img/bg-dar.jpg"}
+              alt="Profile"
+              addClass="rounded-xl border-b-4 mx-auto object-cover object-center w-[30%] h-[10%]"
             />
           </div>
 

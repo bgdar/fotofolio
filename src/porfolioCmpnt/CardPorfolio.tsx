@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ImgWithLoading from "../all-componets/imgWithLoading";
 interface detail {
   judul: string;
   link: string;
@@ -28,7 +29,12 @@ const CardFotofolio: React.FC<detail> = ({
         onMouseLeave={() => handleData(false)}
       >
         {/* Gambar */}
-        <img src={image} alt="" className="w-full h-full object-cover mt-2" />
+        {/* <img src={image} alt="" className="w-full h-full object-cover mt-2" /> */}
+        <ImgWithLoading
+          src={image}
+          alt={judul}
+          addClass="w-full h-full object-cover mt-2"
+        />
 
         {/* Overlay saat hover */}
         <div className="absolute inset-0 p-5 bg-slate-400/90  opacity-0 group-hover:opacity-100 transition-opacity duration-300">

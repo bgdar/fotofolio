@@ -1,3 +1,5 @@
+import ImgWithLoading from "../all-componets/imgWithLoading";
+
 type daftarSkill = {
   image: string;
   description: string;
@@ -11,7 +13,7 @@ interface ProfilSkillProps {
   //isLoaded: boolean;
 }
 // properti isloaded saya matikan karena memakan sumber daya
-const Profil: React.FC<ProfilSkillProps> = ({ item }) => {
+const ProfilCode: React.FC<ProfilSkillProps> = ({ item }) => {
   return (
     <>
       {/* card url */}
@@ -28,7 +30,18 @@ const Profil: React.FC<ProfilSkillProps> = ({ item }) => {
             {item.source}
           </a>
         </div>
-        <img src={item.image} alt={item.title} className="w-32 object-cover" />
+        <div>
+          {/* <img
+            src={item.image}
+            alt={item.title}
+            className="w-32 object-cover"
+          /> */}
+          <ImgWithLoading
+            src={item.image}
+            alt={item.title}
+            addClass={"w-32 object-cover"}
+          />
+        </div>
       </div>
 
       <div
@@ -38,11 +51,17 @@ const Profil: React.FC<ProfilSkillProps> = ({ item }) => {
       >
         {/* {isLoaded ? (
         <> */}
-        <img
+        {/* <img
           src={item.image}
           title={item.title}
           className="w-[160px] h-[160px] object-contain"
+        /> */}
+        <ImgWithLoading
+          src={item.image}
+          alt={item.title}
+          addClass="w-[160px] h-[160px] object-contain"
         />
+
         {/* elemet hover  */}
         <div className="absolute inset-0 p-3 backdrop-blur-lg bg-slate-500/80 flex items-center justify-center opacity-0 scale-95 group-hover:scale-100 group-hover:opacity-100 transition-all ease-in-out duration-300">
           <div className="text-center w-full text-white space-y-4">
@@ -110,14 +129,14 @@ const CodeSkill = ({ nextItem, dataSkill }: TypeCodeSkill) => {
   return (
     <>
       {/* {dataSkil.map((item, index) => (
-        <Profil
+        <ProfilCode
           key={index}
           item={item}
           // isLoaded={loadedIndices.includes(index)}
         />
       ))} */}
       {/* slice elemet agar muncull 1 per 1  */}
-      <Profil item={dataSkill[nextItem]} key={nextItem} />
+      <ProfilCode item={dataSkill[nextItem]} key={nextItem} />
     </>
   );
 };

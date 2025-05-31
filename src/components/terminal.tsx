@@ -93,7 +93,7 @@ const Terminal = () => {
 
   return (
     <section
-      className="h-screen relative w-screen flex items-center justify-center  "
+      className="h-screen relative w-screen flex items-center justify-center   "
       style={{
         backgroundColor: isMaximized ? "rgba(0, 0, 0, 0.8)" : "",
         transition: `${isMaximized ? "background-color 0.3s ease-in-out" : ""}`,
@@ -107,54 +107,52 @@ const Terminal = () => {
           transition: "transform 0.3s ease-in-out",
         }}
         id="terminal"
-        className="terminal w-[60%]  h-[60%] border-4 shadow-lg shadow-[#6b4db1] rounded-lg "
+        className="terminal w-[60%]  h-[60%]  shadow-lg shadow-[#6b4db1] overflow-hidden flex flex-col border-4 rounded-xl"
       >
-        <header>
-          <div className="relative  terminal-header flex justify-between items-center p-4 bg-gradient rounded-t-lg">
-            <div className="flex items-center gap-2">
-              <span className="relative group inline-block ">
+        <header className="relative  terminal-header flex justify-between items-center p-4 bg-gradient rounded-t-lg">
+          <div className="flex items-center gap-2">
+            <span className="relative group inline-block ">
+              <MdOutlineCircle
+                className="text-red-500 cursor-pointer disabled:cursor-not-allowed"
+                size={12}
+                onClick={() => setIsMaximized(false)}
+              />
+              <span className="absolute z-20 border-2  rounded-lg bg-red-300 text-sm text-red-500 opacity-0 group-hover:opacity-100 group-hover:transition-all duration-500 before:content-['close']"></span>
+            </span>
+            <span className="relative group inline-block">
+              <MdOutlineCircle
+                className="text-yellow-500 cursor-pointer"
+                size={12}
+                onClick={() => setIsMaximized(false)}
+              />
+              <span className="absolute z-20 border-2  rounded-lg bg-yellow-300 text-sm t opacity-0 group-hover:opacity-100 group-hover:transition-all duration-500 before:content-['Minimize']"></span>
+            </span>
+            <span className="relative group inline-block">
+              <Link
+                to="terminal"
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={500}
+              >
                 <MdOutlineCircle
-                  className="text-red-500 cursor-pointer disabled:cursor-not-allowed"
+                  className="text-green-500 cursor-pointer"
                   size={12}
-                  onClick={() => setIsMaximized(false)}
+                  onClick={() => setIsMaximized(true)}
                 />
-                <span className="absolute z-20 border-2  rounded-lg bg-red-300 text-sm text-red-500 opacity-0 group-hover:opacity-100 group-hover:transition-all duration-500 before:content-['close']"></span>
-              </span>
-              <span className="relative group inline-block">
-                <MdOutlineCircle
-                  className="text-yellow-500 cursor-pointer"
-                  size={12}
-                  onClick={() => setIsMaximized(false)}
-                />
-                <span className="absolute z-20 border-2  rounded-lg bg-yellow-300 text-sm t opacity-0 group-hover:opacity-100 group-hover:transition-all duration-500 before:content-['Minimize']"></span>
-              </span>
-              <span className="relative group inline-block">
-                <Link
-                  to="terminal"
-                  spy={true}
-                  smooth={true}
-                  offset={-100}
-                  duration={500}
-                >
-                  <MdOutlineCircle
-                    className="text-green-500 cursor-pointer"
-                    size={12}
-                    onClick={() => setIsMaximized(true)}
-                  />
-                </Link>
-                <span className="absolute z-20 border-2  rounded-lg bg-green-300 text-sm  opacity-0 group-hover:opacity-100 group-hover:transition-all duration-500 before:content-['Maximize']"></span>
-              </span>
-            </div>
-
-            <h4 className="font-mono p-1 text-sm absolute right-4 border-2 bg-slate-300 rounded-md">
-              {inputValue}
-            </h4>
+              </Link>
+              <span className="absolute z-20 border-2  rounded-lg bg-green-300 text-sm  opacity-0 group-hover:opacity-100 group-hover:transition-all duration-500 before:content-['Maximize']"></span>
+            </span>
           </div>
+
+          <h4 className="font-mono p-1 text-sm absolute right-4 border-2 bg-slate-300 rounded-md">
+            {inputValue}
+          </h4>
         </header>
 
         <div
           onClick={handleDivFocusInput}
-          className="overflow-auto  scrollbar-hide relative h-[87.6%] w-full bg-[#1c1c1c] p-4 box-border"
+          className="overflow-auto  scrollbar-hide relative h-full w-full bg-[#1c1c1c] p-4 box-border"
         >
           <div ref={divDataRef} className="w-full">
             <PackageCommad command={showData} />
@@ -194,7 +192,6 @@ const Terminal = () => {
       <span
         className="info group absolute bottom-0 left-0 p-2 text-sm text-gray-500 bg-[#1c1c1c] rounded-lg m-3"
         data-aos="fade-right"
-        data-aos-duration="1000"
       >
         <p>
           <span className=" text-green-800 m-1">neofetch</span> to info

@@ -1,9 +1,59 @@
+import { useEffect, useState } from "react";
+import { FaReact, FaYoutube } from "react-icons/fa";
+import { GiAnimalHide } from "react-icons/gi";
+import { HiOutlineMail } from "react-icons/hi";
+import { IoCodeSlash, IoPhoneLandscapeOutline } from "react-icons/io5";
+import { SiTypescript } from "react-icons/si";
+import { TfiLayoutMediaCenterAlt } from "react-icons/tfi";
+
+interface DataItemsType {
+  title: string;
+  content: JSX.Element;
+  color?: string;
+}
+const dataItems: Array<DataItemsType> = [
+  {
+    title: "code",
+    content: <IoCodeSlash />,
+    color: "text-green-600",
+  },
+  {
+    title: "React.js",
+    content: <FaReact />,
+    color: "text-blue-500",
+  },
+  {
+    title: "Typescript",
+    content: <SiTypescript />,
+    color: "text-blue-600",
+  },
+  {
+    title: "DOM",
+    content: <GiAnimalHide />,
+    color: "text-yellow-500",
+  },
+  {
+    title: "Youtube",
+    content: <FaYoutube />,
+    color: "text-red-600",
+  },
+];
+
 export default function Contact() {
+  const [nextItem, setNextItem] = useState<number>(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setNextItem((prev) => (prev + 1) % dataItems.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, [nextItem]);
+
   return (
     <div id="contact" data-aos="fade" data-aos-duration="1000">
       <section
         id="contact"
-        className=" container py-12 mt-14 bg-gray-300 mx-auto rounded-t-2xl shadow-xl "
+        className=" container py-12 mt-14 bg-gray-300 mx-auto rounded-t-2xl  "
       >
         <div className=" mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -16,26 +66,13 @@ export default function Contact() {
             </p>
           </div>
 
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-white p-6 sm:p-8 rounded-lg shadow-lg">
+          <div className="max-w-2xl mx-auto flex gap-4 justify-center flex-col sm:flex-row">
+            <div className="bg-white p-6 sm:p-8 rounded-lg h-full ">
               <div className="space-y-6">
                 {/* Email */}
                 <div className="flex items-center space-x-4">
                   <div className="p-3 bg-blue-100 rounded-full">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6 text-blue-600"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
+                    <HiOutlineMail className="h-6 w-6 text-blue-600" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">
@@ -53,20 +90,7 @@ export default function Contact() {
                 {/* Phone */}
                 <div className="flex items-center space-x-4">
                   <div className="p-3 bg-green-100 rounded-full">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6 text-green-600"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                      />
-                    </svg>
+                    <IoPhoneLandscapeOutline className="h-6 w-6 text-green-600" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">
@@ -84,20 +108,7 @@ export default function Contact() {
                 {/* Social Media */}
                 <div className="flex items-center space-x-4">
                   <div className="p-3 bg-purple-100 rounded-full">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6 text-purple-600"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 10V3L4 14h7v7l9-11h-7z"
-                      />
-                    </svg>
+                    <TfiLayoutMediaCenterAlt className="h-6 w-6 text-purple-600" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">
@@ -126,6 +137,41 @@ export default function Contact() {
                 </div>
               </div>
             </div>
+
+            <section className="relative w-full   h-64 ">
+              <div className="relative w-full h-full flex items-center justify-center">
+                {dataItems.map((item, index) => {
+                  const isActive = index === nextItem;
+                  const isNext = index === (nextItem + 1) % dataItems.length;
+
+                  return (
+                    <div
+                      key={item.title}
+                      className={`
+            bg-white  absolute mb-10 left-0 w-full h-20 transition-all duration-700 ease-in-out
+            ${isActive ? "translate-x-0 z-20 opacity-100" : ""}
+            ${
+              isNext
+                ? "translate-x-5 translate-y-5 scale-95 rotate-[1deg] blur-sm z-10 opacity-80"
+                : "opacity-0"
+            }
+          `}
+                    >
+                      <div className="  p-6 rounded-lg shadow-xl  border-2">
+                        <div
+                          className={`text-4xl mb-2 ${item.color} flex justify-center items-center`}
+                        >
+                          {item.content}
+                        </div>
+                        <h3 className="text-lg text-center font-extrabold text-gray-900">
+                          {item.title}
+                        </h3>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </section>
           </div>
         </div>
       </section>
