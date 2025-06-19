@@ -3,6 +3,7 @@ import { FaArrowRight, FaLinux } from "react-icons/fa";
 import { MdOutlineCircle } from "react-icons/md";
 import PackageCommad from "../terminalCmpnt/packageCommad";
 import { Link, scroller } from "react-scroll";
+import BacgroundTransparan from "../all-componets/bacgroundTransparan";
 
 // import { Command } from "../terminalCmpnt/handleData";
 
@@ -13,7 +14,7 @@ const Terminal = () => {
   const [enterOn, setEnterOn] = useState<number>(0);
   // const [heightDiv, setHeightDiv] = useState<number>(0);
   //gunakan untuk menyimpan data ke div nantinya untuk di tampilkan
-  const [showData, setShowData] = useState<string[]>([]);
+  const [showData, setShowData] = useState<string[]>(["neofetch"]);
 
   //ini stattate untuk membesar kecilkan atau pengelolaan terminal
   const [isMaximized, setIsMaximized] = useState(false);
@@ -63,7 +64,7 @@ const Terminal = () => {
       if (value == "open" && isMaximized == false) {
         setShowData([""]); //clear semua data
         setIsMaximized(true);
-        //targetkan terminal saat commad scroll
+        //targetkan dengan id terminal saat commad scroll
         scroller.scrollTo("terminal", {
           duration: 500,
           smooth: true,
@@ -95,7 +96,6 @@ const Terminal = () => {
     <section
       className="h-screen relative w-screen flex items-center justify-center   "
       style={{
-        backgroundColor: isMaximized ? "rgba(0, 0, 0, 0.8)" : "",
         transition: `${isMaximized ? "background-color 0.3s ease-in-out" : ""}`,
         maxHeight: isMaximized ? "100vh" : "",
       }}
@@ -189,14 +189,16 @@ const Terminal = () => {
         </div>
       </div>
 
-      <span
+      {isMaximized && <BacgroundTransparan />}
+
+      {/* <span
         className="info group absolute bottom-0 left-0 p-2 text-sm text-gray-500 bg-[#1c1c1c] rounded-lg m-3"
         data-aos="fade-right"
       >
         <p>
           <span className=" text-green-800 m-1">neofetch</span> to info
         </p>
-      </span>
+      </span> */}
     </section>
   );
 };

@@ -57,7 +57,7 @@ export default function Contact() {
       >
         <div className=" mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl bg-white font-bold border-2 w-[50vw] mx-auto p-2 shadow-sm shadow-slate-400 translate-y-[-2em] text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl bg-white font-bold border-2 w-[50vw] mx-auto p-2 shadow-sm shadow-slate-400 translate-y-[-2em] sm:rounded-sm text-gray-900 mb-4">
               Let's Connect
             </h2>
             <p className=" text-gray-600 mb-8  font-semibold text-sm">
@@ -66,8 +66,8 @@ export default function Contact() {
             </p>
           </div>
 
-          <div className="max-w-2xl mx-auto flex gap-4 justify-center flex-col sm:flex-row">
-            <div className="bg-white p-6 sm:p-8 rounded-lg h-full ">
+          <div className="max-w-2xl mx-auto flex gap-1 sm:gap-4 justify-center flex-col sm:flex-row">
+            <div className="bg-white p-6 rounded-lg h-full border-2 ">
               <div className="space-y-6">
                 {/* Email */}
                 <div className="flex items-center space-x-4">
@@ -138,8 +138,8 @@ export default function Contact() {
               </div>
             </div>
 
-            <section className="relative w-full   h-64 ">
-              <div className="relative w-full h-full flex items-center justify-center">
+            <section className="relative w-full h-[100px]  sm:h-40 ">
+              <div className="relative h-full flex ijustify-center">
                 {dataItems.map((item, index) => {
                   const isActive = index === nextItem;
                   const isNext = index === (nextItem + 1) % dataItems.length;
@@ -148,7 +148,7 @@ export default function Contact() {
                     <div
                       key={item.title}
                       className={`
-            bg-white  absolute mb-10 left-0 w-full h-20 transition-all duration-700 ease-in-out
+            bg-white  absolute left-0 w-full md:h-28 transition-all duration-700 ease-in-out
             ${isActive ? "translate-x-0 z-20 opacity-100" : ""}
             ${
               isNext
@@ -157,7 +157,7 @@ export default function Contact() {
             }
           `}
                     >
-                      <div className="  p-6 rounded-lg shadow-xl  border-2">
+                      <div className="  p-6 rounded-lg shadow-xl sm:h-64  border-2">
                         <div
                           className={`text-4xl mb-2 ${item.color} flex justify-center items-center`}
                         >

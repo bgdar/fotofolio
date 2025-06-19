@@ -49,18 +49,17 @@ export default function Code() {
             </h3>
           </div>
 
-          <div className="flex justify-around p-4 gap-3 transition-all duration-300 ease-in-out">
+          <div className="flex justify-around items-center w-full max-w-screen-lg px-4 gap-2 transition-all duration-300 ease-in-out">
             <button
-              className="px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-800 transition"
-              type="button"
+              className="flex-1 min-w-0 px-[2vw] py-[1.2vw] bg-gray-700 text-white rounded-md hover:bg-gray-800 text-[3vw] sm:text-base transition"
               onClick={handlePrev}
+              type="button"
             >
-              {/* <span className="text-sm">Prev</span> */}
               Prev
             </button>
 
             <span
-              className="transition-all duration-500 ease-in-out text-2xl flex items-center justify-center"
+              className="text-[6vw] sm:text-2xl transition-all duration-500 ease-in-out flex items-center justify-center"
               style={{
                 transform: `${
                   isNextItem ? "rotate(180deg)" : "rotate(-360deg)"
@@ -70,16 +69,15 @@ export default function Code() {
               {isNextItem ? (
                 <TbHandFingerRight className="text-slate-100" />
               ) : (
-                // <TbPlayerTrackPrevFilled />
                 <TbHandFingerRight />
               )}
             </span>
+
             <button
-              className="px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-800 transition"
-              type="button"
+              className="flex-1 min-w-0 px-[2vw] py-[1.2vw] bg-gray-700 text-white rounded-md hover:bg-gray-800 text-[3vw] sm:text-base transition"
               onClick={handleNext}
+              type="button"
             >
-              {/* <span className="text-sm">Next</span> */}
               Next
             </button>
           </div>
@@ -170,7 +168,8 @@ const dataSkil: daftarSkill[] = [
       "Python adalah bahasa tingkat tinggi yang terkenal karena sintaksnya yang sederhana.",
     level: 30,
     source: "https://www.python.org/",
-    code: `print("Hello, Python!")`,
+    code: `print("Hello, Python!")\n\ndef display(name->str)->str:
+\treturn f"hello {name}"`,
   },
   {
     image: "./img/go.png",

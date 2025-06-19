@@ -33,7 +33,6 @@ const PackageCommad = ({ command }: typePackageCommad) => {
       {command
         .filter((cmd) => cmd.trim() !== "") // filter agar tidak menerima perintah clear alias kosong
         .map((cmd, index) => {
-          console.log("cmd nya =", cmd);
           // if (cmd === "clear") {
           //   return (
           //     <div key={index} className="text-gray-400 text-sm italic">

@@ -8,9 +8,9 @@ type CodeTextEditorProps = {
 
 const CodeTextEditor = ({ code, language }: CodeTextEditorProps) => {
   return (
-    <div className="w-full h-56 p-4 rounded-lg overflow-auto scrollbar-hide ">
+    <div className="w-full h-56 p-4 rounded-lg overflow-auto scrollbar-hide  ">
       <div
-        className="w-full h-56 max-h-56 p-4 rounded-lg bg-[#282c34] shadow-lg overflow-auto text-sm"
+        className="w-full h-full max-h-56 p-4 rounded-lg bg-[#282c34] shadow-lg overflow-auto scrollbar-hide  text-sm"
         style={{
           fontSize: "1rem", // optional, menyesuaikan ukuran font
         }}

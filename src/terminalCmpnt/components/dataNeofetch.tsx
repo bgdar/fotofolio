@@ -8,8 +8,8 @@ const Neofetch = () => {
       <h2 className="text-pretty text-sm md:text-base font-mono text-gray-400 text-center tracking-widest uppercase">
         Welcome
       </h2>
-      <div className="">
-        <pre className="text-gray-500 text-sm font-mono max-h-full max-w-full overflow-auto">
+      <div className=" ">
+        <pre className="scrollbar-hide text-gray-500 text-sm font-mono max-h-full max-w-full overflow-auto">
           {`
         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⠤⠶⢤⣀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠔⢊⣽⠃⠀⠀⠀⠀⠈⠹⠦⣀⠀⠀⠀⠀⢈⠑⢆⣀⠀⠀

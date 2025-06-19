@@ -31,16 +31,11 @@ const ProfilCode: React.FC<ProfilSkillProps> = ({ item }) => {
           </a>
         </div>
         <div>
-          {/* <img
-            src={item.image}
-            alt={item.title}
-            className="w-32 object-cover"
-          /> */}
-          <ImgWithLoading
+          {/* <ImgWithLoading
             src={item.image}
             alt={item.title}
             addClass={"w-32 object-cover"}
-          />
+          /> */}
         </div>
       </div>
 
@@ -76,7 +71,6 @@ const ProfilCode: React.FC<ProfilSkillProps> = ({ item }) => {
                 {item.level}%
               </span>
 
-              {/* Lingkaran Progress (opsional) */}
               <svg className="absolute top-0 left-0 w-full h-full transform rotate-[-90deg]">
                 <circle
                   cx="50%"

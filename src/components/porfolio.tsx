@@ -3,29 +3,33 @@ import { RiProjectorLine } from "react-icons/ri";
 import { FaArrowCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 import { useState } from "react";
 
-const dataCardForfolio = [
+const DataCardForfolio = [
   {
     judul: "leaf node",
-    link: "https://leaf-node.vercel.app/",
+    linkRepo: "https://github.com/bgdar/leaf-node",
+    linkDemo: "https://leaf-node.vercel.app/",
     image: "porfolio/leaf-node.jpg",
     descripsi:
       "web sederhana yang di buat dengan node.js dan  express.js di kombinasikan dengan librry sweetAlert2 ",
   },
   {
     judul: "Fyl Bird",
-    link: "https://github.com/bgdar/flying-bird",
+    linkRepo: "https://github.com/bgdar/flying-bird",
+    linkDemo: "",
     image: "porfolio/fly-bird.jpg",
     descripsi: " Burung? Lembek? Coba Aja sendiri! ",
   },
   {
     judul: "daros",
-    link: "https://github.com/bgdar/daros",
+    linkRepo: "https://github.com/bgdar/daros",
+    linkDemo: "",
     image: "porfolio/daros.jpg",
     descripsi: " Ini  Sistem Operasi ❌ Ini Website ✅",
   },
   {
     judul: "dasboard-monitoring",
-    link: "https://github.com/bgdar/dasboard-monitoring.jpg",
+    linkRepo: "https://github.com/bgdar/dasboard-monitoring.jpg",
+    linkDemo: "",
     image: "/porfolio/dasboard-monitoring.jpg",
     descripsi:
       "Akses  lewat browser untuk lihat status sistem kamu seperti Task Manager ",
@@ -33,20 +37,23 @@ const dataCardForfolio = [
 
   {
     judul: "Golang web",
-    link: "https://bitbucket.org/bgdar/golang-web/src/main/",
+    linkRepo: "https://bitbucket.org/bgdar/golang-web/src/main/",
+    linkDemo: "",
     image: "porfolio/golang-web.jpg",
     descripsi: "web cloning Instagram  ",
   },
   {
     judul: "Text Base RPG Game ",
-    link: "https://bitbucket.org/bgdar/text-base-rpg-game/src/main/",
+    linkRepo: "https://bitbucket.org/bgdar/text-base-rpg-game/src/main/",
+    linkDemo: "",
     image: "porfolio/text-base-rpg-game.png",
     descripsi:
       " Dikembangkan dengan Golang  |  Sebuah game Petualangan Fantasy yang Epik! Menggunakan CLI 🎮 ",
   },
   {
     judul: "Tools CLI",
-    link: "https://github.com/bgdar/cli-tools",
+    linkRepo: "https://github.com/bgdar/cli-tools",
+    linkDemo: "",
     image: "porfolio/tools-cli.jpg",
     descripsi:
       "beberapa Tools Dibangun dengan Node.js + TypeScript   dalam networking serta berbagai kebutuhan lainnya! ",
@@ -56,7 +63,7 @@ const dataCardForfolio = [
 export default function Porfofio() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const itemsPerPage = 4; // 2 kolom x 2 baris = 4 item
-  const totalItems = dataCardForfolio.length;
+  const totalItems = DataCardForfolio.length;
 
   const handleNext = () => {
     if (currentIndex + itemsPerPage < totalItems) {
@@ -83,11 +90,12 @@ export default function Porfofio() {
 
         {/* Grid data porfolio yang  2 kolom x 2 baris */}
         <div className="grid grid-cols-2 grid-rows-2 gap-4 mt-4 transition-transform duration-500 ease-in-out">
-          {dataCardForfolio
-            .slice(currentIndex, currentIndex + itemsPerPage)
-            .map((data, index) => (
-              <CardFotofolio key={index} {...data} />
-            ))}
+          {DataCardForfolio.slice(
+            currentIndex,
+            currentIndex + itemsPerPage
+          ).map((data, index) => (
+            <CardFotofolio key={index} {...data} />
+          ))}
         </div>
 
         {/* Tombol Navigasi */}
@@ -115,12 +123,12 @@ export default function Porfofio() {
         </div>
 
         {/* Komponen yang Bergeser */}
-        <div className="relative w-[18%]  mx-auto  h-[50px p-4 mt-4 rounded-2xl flex justify-center ">
+        <div className="relative w-[20%]  mx-auto  h-[50px] p-4 mt-4 rounded-2xl flex justify-center ">
           {/* Ikon Panah yang Bergerak */}
           <div
             className={`transition-transform shadow-md duration-300 ease-in-out px-4 ${
               currentIndex + itemsPerPage >= totalItems
-                ? " translate-x-2 rotate-180"
+                ? " translate-x-6 rotate-180"
                 : " -translate-x-2 -rotate-180"
             }`}
           >
