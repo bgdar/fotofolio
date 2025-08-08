@@ -5,6 +5,7 @@ import { useState } from "react";
 
 const DataCardForfolio = [
   {
+    id: 1,
     judul: "leaf node",
     linkRepo: "https://github.com/bgdar/leaf-node",
     linkDemo: "https://leaf-node.vercel.app/",
@@ -13,6 +14,7 @@ const DataCardForfolio = [
       "web sederhana yang di buat dengan node.js dan  express.js di kombinasikan dengan librry sweetAlert2 ",
   },
   {
+    id: 2,
     judul: "Fyl Bird",
     linkRepo: "https://github.com/bgdar/flying-bird",
     linkDemo: "",
@@ -20,15 +22,17 @@ const DataCardForfolio = [
     descripsi: " Burung? Lembek? Coba Aja sendiri! ",
   },
   {
+    id: 3,
     judul: "daros",
     linkRepo: "https://github.com/bgdar/daros",
-    linkDemo: "",
+    linkDemo: "https://daros-xi.vercel.app/",
     image: "porfolio/daros.jpg",
     descripsi: " Ini  Sistem Operasi ❌ Ini Website ✅",
   },
   {
+    id: 4,
     judul: "dasboard-monitoring",
-    linkRepo: "https://github.com/bgdar/dasboard-monitoring.jpg",
+    linkRepo: "https://github.com/bgdar/dashboard-monitor",
     linkDemo: "",
     image: "/porfolio/dasboard-monitoring.jpg",
     descripsi:
@@ -36,6 +40,7 @@ const DataCardForfolio = [
   },
 
   {
+    id: 5,
     judul: "Golang web",
     linkRepo: "https://bitbucket.org/bgdar/golang-web/src/main/",
     linkDemo: "",
@@ -43,6 +48,7 @@ const DataCardForfolio = [
     descripsi: "web cloning Instagram  ",
   },
   {
+    id: 6,
     judul: "Text Base RPG Game ",
     linkRepo: "https://bitbucket.org/bgdar/text-base-rpg-game/src/main/",
     linkDemo: "",
@@ -51,6 +57,7 @@ const DataCardForfolio = [
       " Dikembangkan dengan Golang  |  Sebuah game Petualangan Fantasy yang Epik! Menggunakan CLI 🎮 ",
   },
   {
+    id: 7,
     judul: "Tools CLI",
     linkRepo: "https://github.com/bgdar/cli-tools",
     linkDemo: "",

@@ -4,6 +4,7 @@ import { MdOutlineCircle } from "react-icons/md";
 import PackageCommad from "../terminalCmpnt/packageCommad";
 import { Link, scroller } from "react-scroll";
 import BacgroundTransparan from "../all-componets/bacgroundTransparan";
+import { useGlobalState } from "../globalState";
 
 // import { Command } from "../terminalCmpnt/handleData";
 
@@ -22,6 +23,7 @@ const Terminal = () => {
   const divDataRef = useRef<HTMLDivElement>(null);
   const inputCommandRef = useRef<HTMLInputElement>(null);
 
+  const { showTerminal, toggleShowTerminal } = useGlobalState();
   // useEffect(() => {
   //   if (divDataRef.current) {
   //     const rect = divDataRef.current.getBoundingClientRect();
@@ -58,7 +60,8 @@ const Terminal = () => {
       }
       if (value == "exit" || (value == "close" && isMaximized == true)) {
         e.currentTarget.value = "";
-        setIsMaximized(false);
+        // toggleShowTerminal(); //tutup terminal
+        // setIsMaximized(false);
         setShowData([""]); //clear semua data
       }
       if (value == "open" && isMaximized == false) {
@@ -74,12 +77,18 @@ const Terminal = () => {
     }
   };
 
+  const handleCloseTerminal = () => {
+    toggleShowTerminal();
+    setIsMaximized(false);
+    setShowData([""]); //clear semua data
+  };
+
   const date: Date = new Date();
 
   //handle effect untuk saat terminal di mount
   useEffect(() => {
     const Navigasi = document.getElementById("navigasi") as HTMLElement; //hide Navigasi
-    if (isMaximized) {
+    if (showTerminal) {
       (Navigasi as HTMLElement).style.display = "none";
       document.body.style.overflow = "hidden"; //disable scroll body
     } else {
@@ -90,19 +99,26 @@ const Terminal = () => {
       (Navigasi as HTMLElement).style.display = "";
       document.body.style.overflow = ""; //cleanUp saat component di unmount
     };
-  }, [isMaximized]);
+  }, [showTerminal]);
 
   return (
     <section
-      className="h-screen relative w-screen flex items-center justify-center   "
+      className={` h-screen ${
+        showTerminal ? " bottom-0" : "bottom-[-100vh]"
+      } z-40  fixed w-screen flex items-center justify-center transition-all duration-500 ease-in-out `}
       style={{
         transition: `${isMaximized ? "background-color 0.3s ease-in-out" : ""}`,
         maxHeight: isMaximized ? "100vh" : "",
       }}
     >
+      {/* {isMaximized && showTerminal  &&  <BacgroundTransparan />} */}
+      {showTerminal && <BacgroundTransparan />}
+
       <div
         style={{
-          transform: isMaximized ? "scale(1.4)" : "scale(1)",
+          transform: isMaximized
+            ? "scale(1.4) translate(0px, 25px) "
+            : "scale(1) translate(0px, 0px)",
           zIndex: isMaximized ? 1000 : 0,
           transition: "transform 0.3s ease-in-out",
         }}
@@ -115,7 +131,7 @@ const Terminal = () => {
               <MdOutlineCircle
                 className="text-red-500 cursor-pointer disabled:cursor-not-allowed"
                 size={12}
-                onClick={() => setIsMaximized(false)}
+                onClick={handleCloseTerminal}
               />
               <span className="absolute z-20 border-2  rounded-lg bg-red-300 text-sm text-red-500 opacity-0 group-hover:opacity-100 group-hover:transition-all duration-500 before:content-['close']"></span>
             </span>
@@ -188,8 +204,6 @@ const Terminal = () => {
           </section>
         </div>
       </div>
-
-      {isMaximized && <BacgroundTransparan />}
 
       {/* <span
         className="info group absolute bottom-0 left-0 p-2 text-sm text-gray-500 bg-[#1c1c1c] rounded-lg m-3"

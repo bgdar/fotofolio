@@ -20,7 +20,7 @@ const ProfilCode: React.FC<ProfilSkillProps> = ({ item }) => {
       <div className="flex flex-wrap border rounded-lg overflow-hidden shadow-md w-full max-w-xl transition-all duration-300 ease-in-out">
         <div className="flex-1 p-4">
           <h2 className="font-semibold text-lg">{item.title}</h2>
-          <p className="text-sm text-gray-600 mb-2">{item.description}</p>
+          <p className="text-sm  font-mono mb-2">{item.description}</p>
           <a
             href={item.source}
             className="text-blue-500 text-sm hover:underline"

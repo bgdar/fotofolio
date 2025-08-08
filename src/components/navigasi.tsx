@@ -1,7 +1,7 @@
 import { Link } from "react-scroll";
 import { FaRegFileCode, FaUserTie, FaLaptopCode } from "react-icons/fa";
 import { RiContactsBook2Fill } from "react-icons/ri";
-import { IoTerminal } from "react-icons/io5";
+// import { IoTerminal } from "react-icons/io5";
 
 import { CgProfile } from "react-icons/cg";
 export default function Navigasi() {
@@ -47,7 +47,7 @@ export default function Navigasi() {
         >
           <CgProfile />
         </Link>
-        <Link
+        {/* <Link
           to="terminal"
           title="terminal"
           className=" flex w-[30px] h-[30px] justify-center cursor-pointer"
@@ -58,7 +58,7 @@ export default function Navigasi() {
           activeClass="active"
         >
           <IoTerminal />
-        </Link>
+        </Link> */}
 
         <Link
           to="porfolio"

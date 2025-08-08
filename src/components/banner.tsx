@@ -2,9 +2,14 @@ import { TypeAnimation } from "react-type-animation";
 import React, { useState } from "react";
 import ImgWithLoading from "../all-componets/imgWithLoading";
 
+import { useGlobalState } from "../globalState";
+
 export default function Banner() {
   //membuat pergerakan pada mouse
   const [pos, setPos] = useState({ x: 0, y: 0 });
+
+  const { theme } = useGlobalState();
+
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const { left, top } = e.currentTarget.getBoundingClientRect();
     setPos({
@@ -80,16 +85,16 @@ export default function Banner() {
               style={{
                 fontSize: "1.1em", // Text size
                 fontWeight: "bold", // Bold text
-                color: "#afc6e0", // Primary color
+                color: theme === "dark" ? "#afc6e0" : "#dde9f3", // Primary color
                 textShadow: "1px 1px 3px rgba(0, 0, 0, 0.3)", // Text shadow for added style
                 display: "inline-block", // Maintain inline styling
               }}
               className="custom-animation" // Optional: Add custom class for further styling
             />
           </div>
-          <div className="max-w-[750px] text-center text-gradient ">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptatibus culp optio of
+          <div className="max-w-[750px] text-center tracking-wide font-mono ">
+            Mencintai proses mengubah ide menjadi nyata, membangun pengalaman
+            yang hidup lewat kode
           </div>
         </div>
       </div>

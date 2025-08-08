@@ -3,9 +3,13 @@ import { useState } from "react";
 import { TbHandFingerRight } from "react-icons/tb";
 import CodeTextEditor from "../codeCmpnt/codeTextEditor";
 
+import { useGlobalState } from "../globalState";
+
 export default function Code() {
   const [nextItem, setNextItem] = useState<number>(0);
   const [isNextItem, setIsNextItem] = useState<boolean>(false);
+
+  const { theme } = useGlobalState();
 
   const handleNext = () => {
     setNextItem((next) => next + 1);
@@ -37,7 +41,9 @@ export default function Code() {
         <div className="flex justify-evenly">
           <div
             data-aos="fade-right"
-            className="text-start m-4 rounded-lg  p-2 bg-slate-200 shadow-lg shadow-slate-400 w-[100%] font-mono"
+            className={`${
+              theme === "light" ? "bg-slate-100" : "bg-slate-800"
+            } text-start m-4 rounded-lg  p-2 shadow-lg shadow-slate-400 w-[100%] font-mono`}
           >
             <h3>
               <img
@@ -168,7 +174,7 @@ const dataSkil: daftarSkill[] = [
       "Python adalah bahasa tingkat tinggi yang terkenal karena sintaksnya yang sederhana.",
     level: 30,
     source: "https://www.python.org/",
-    code: `print("Hello, Python!")\n\ndef display(name->str)->str:
+    code: `print("Hello, Python!")\n\ndef display(name :str)->str:
 \treturn f"hello {name}"`,
   },
   {

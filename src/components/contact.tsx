@@ -60,7 +60,7 @@ export default function Contact() {
             <h2 className="text-3xl sm:text-4xl bg-white font-bold border-2 w-[50vw] mx-auto p-2 shadow-sm shadow-slate-400 translate-y-[-2em] sm:rounded-sm text-gray-900 mb-4">
               Let's Connect
             </h2>
-            <p className=" text-gray-600 mb-8  font-semibold text-sm">
+            <p className=" text-gray-600 mb-8 font-mono text-sm">
               I am always open to discuss new projects, creative ideas, or
               anything related to Code "greetings interaction"
             </p>

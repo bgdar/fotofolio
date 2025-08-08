@@ -10,7 +10,7 @@ const BacgroundTransparan = () => {
     };
   }, []);
   return (
-    <div className="fixed inset-0  bg-black opacity-50 z-20  transition-opacity duration-150" />
+    <div className="fixed inset-0  bg-black opacity-50   transition-opacity duration-150" />
   );
 };
 

@@ -1,5 +1,10 @@
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import {
+  oneDark,
+  dracula,
+} from "react-syntax-highlighter/dist/esm/styles/prism";
+
+import { useGlobalState } from "../globalState";
 
 type CodeTextEditorProps = {
   code?: string;
@@ -7,6 +12,8 @@ type CodeTextEditorProps = {
 };
 
 const CodeTextEditor = ({ code, language }: CodeTextEditorProps) => {
+  const { theme } = useGlobalState();
+
   return (
     <div className="w-full h-56 p-4 rounded-lg overflow-auto scrollbar-hide  ">
       <div
@@ -17,7 +24,7 @@ const CodeTextEditor = ({ code, language }: CodeTextEditorProps) => {
       >
         <SyntaxHighlighter
           language={language}
-          style={oneDark}
+          style={theme === "dark" ? oneDark : dracula} // Use oneDark for dark theme, or default for light
           customStyle={{
             background: "transparent",
             margin: 0,

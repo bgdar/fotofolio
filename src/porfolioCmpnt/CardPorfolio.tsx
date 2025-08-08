@@ -3,6 +3,7 @@ import ImgWithLoading from "../all-componets/imgWithLoading";
 import BacgroundTransparan from "../all-componets/bacgroundTransparan";
 import PopupInfo from "./popupInfo";
 interface detail {
+  id: number;
   judul: string;
   linkRepo?: string;
   linkDemo?: string;
@@ -12,6 +13,7 @@ interface detail {
 
 const CardFotofolio: React.FC<detail> = ({
   judul,
+  id,
   linkRepo = "",
   linkDemo = "",
   image,
@@ -72,7 +74,26 @@ const CardFotofolio: React.FC<detail> = ({
       </div>
 
       {/* popup yg muncul saat di click */}
-      {ispopupShow && (
+      {ispopupShow && id && (
+        <>
+          <BacgroundTransparan />
+          <div className="fixed w-[90vw] h-[90vh] lg:w-[50vw] lg:h-[60vh]  top-1/2 left-1/2 opacity-100 -translate-x-1/2 lg:-translate-y-1/2 transition-all duration-500 ease-in-out z-50">
+            <PopupInfo
+              dataItems={{
+                id,
+                judul,
+                linkDemo,
+                linkRepo,
+                image,
+                descripsi,
+              }}
+              setPopupShow={setIspopupShow}
+            />
+          </div>
+        </>
+      )}
+
+      {/* {ispopupShow && (
         <>
           <PopupInfo
             dataItems={{
@@ -88,7 +109,7 @@ const CardFotofolio: React.FC<detail> = ({
 
           <BacgroundTransparan />
         </>
-      )}
+      )} */}
     </div>
   );
 };

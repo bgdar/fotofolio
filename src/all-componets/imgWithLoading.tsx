@@ -13,7 +13,6 @@ const ImgWithLoading = (props: ImageLoadingProps) => {
 
   const handleLoad = () => {
     setLoaded(true);
-    console.log("Image loaded successfully");
   };
 
   return (

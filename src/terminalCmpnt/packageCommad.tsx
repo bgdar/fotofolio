@@ -16,7 +16,6 @@ import Neofetch from "./components/dataNeofetch";
 const dataLs: string[] = ["data1", "data2", "data3"];
 
 const dataComponents: Record<string, () => JSX.Element> = {
-  clear: () => <p className="text-gray-500 text-sm">Terminal cleared.</p>,
   ls: () => <DataLs fileName={dataLs} />,
   pwd: () => <p className="text-gray-500 text-sm">/home/user</p>,
   neofetch: () => <Neofetch />,

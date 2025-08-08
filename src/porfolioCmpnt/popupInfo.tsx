@@ -6,6 +6,7 @@ import { IoCloseCircleSharp } from "react-icons/io5";
 import ImgWithLoading from "../all-componets/imgWithLoading";
 
 interface DataItems {
+  id: number;
   judul: string;
   linkRepo: string;
   linkDemo: string;
@@ -28,20 +29,28 @@ function cekLinkRepo(link: string): React.ReactNode {
   }
 }
 
+/**
+ * popup yanag akan di gunakan untuk menampilklan informasi detail dari data yang di klik
+ * @param dateItems - Data yang akan ditampilkan di popup
+ * @returns
+ */
 const PopupInfo = ({ dataItems, setPopupShow }: PopupInfoProps) => {
   return (
     <>
-      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50vw] h-[60vh] bg-white rounded-xl shadow-md shadow-slate-200 transition-all duration-300 z-50">
-        <ImgWithLoading
-          src={dataItems.image}
-          addClass={"w-full h-full object-cover"}
-          alt={dataItems.judul}
-        />
+      <div className=" bg-white  rounded-xl shadow-md shadow-slate-200 transition-all duration-300 ">
+        <div className="relative">
+          <ImgWithLoading
+            src={dataItems.image}
+            addClass={"w-full h-full object-cover"}
+            alt={dataItems.judul}
+          />
+          {/* <video src=""></video> */}
+        </div>
 
         {/* Aksi */}
-        <div className="flex absolute w-full bottom-0 justify-between items-center px-4 py-3 bg-gray-100 border-t">
+        <div className="flex absolute w-full justify-between items-center px-4 bg-gray-100 border-t">
           {cekLinkRepo(dataItems.linkRepo) !== "" && (
-            <button className=" hover:text-slate-700 transition-colors">
+            <button className=" text-gray-950 transition-colors">
               <a
                 href={dataItems.linkRepo}
                 target="_blank"
@@ -55,7 +64,7 @@ const PopupInfo = ({ dataItems, setPopupShow }: PopupInfoProps) => {
 
           {dataItems.linkDemo.length !== 0 && (
             <button
-              title="Slideshow"
+              title={dataItems.judul}
               className="text-gray-700 hover:text-indigo-600 text-xl transition-transform hover:scale-110"
             >
               <BiSolidSlideshow />

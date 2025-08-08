@@ -7,7 +7,7 @@ import {
 } from "react-icons/fa";
 export default function Footer() {
   return (
-    <footer className="relative  bottom-0 w-full bg-white dark:bg-gray-900 z-50">
+    <footer className="relative  bottom-0 w-full bg-white dark:bg-gray-900 z-40">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
@@ -27,8 +27,9 @@ export default function Footer() {
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  React{" "}
-                  <a href="https://react.dev/" className="hover:underline"></a>
+                  <a href="https://react.dev/" className="hover:underline">
+                    React{" "}
+                  </a>
                 </li>
                 <li>
                   <a

@@ -3,13 +3,13 @@
 [![Portfolio](https://img.shields.io/badge/Portfolio-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)](https://fotofolio-six.vercel.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/bgdar)
 
-### Demo
+### fortofolio
 
 https://github.com/user-attachments/assets/120204e4-c2a5-4a5a-a09c-9210fc0351b8
 
 ---
 
-## About Me 🧑‍💻
+### About Me 🧑‍💻
 
 - 🌱 I’m currently learning **JavaScript | TypeScript**, **Python**,**Golang**, **Rust**,**zig** , **java** and **c++**
 - 👯 I’m looking to collaborate on **open-source projects**.
@@ -20,7 +20,7 @@ https://github.com/user-attachments/assets/120204e4-c2a5-4a5a-a09c-9210fc0351b8
 
 ---
 
-## Technology Used
+### Technology Used
 
 | `Teknologi`                      |
 | -------------------------------- | --- |
@@ -35,7 +35,7 @@ https://github.com/user-attachments/assets/120204e4-c2a5-4a5a-a09c-9210fc0351b8
 
 ---
 
-## GitHub Stats
+### GitHub Stats
 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=bgdar&show_icons=true&theme=radical)
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=bgdar&layout=compact&theme=radical)

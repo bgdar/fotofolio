@@ -48,7 +48,7 @@ const Words = () => {
       className="flex justify-center items-center relative  mx-auto border-separate bg-gray-500 w-[90%] h-[90%] max-h-[10rem]"
     >
       <div className="absolute p-2 text-center top-0 right-0 translate-x-6 translate-y-[-1.5rem] border-4 rounded-lg bg-slate-50 border-y-dark-gray">
-        <span>point to open</span>
+        <span className="font-mono font-bold">point to open</span>
       </div>
       <svg
         viewBox="-400 -530 800 800"

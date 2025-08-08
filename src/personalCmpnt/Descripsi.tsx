@@ -2,10 +2,12 @@ import anime from "animejs";
 import React, { useRef } from "react";
 
 const Description = () => {
-  const words =
-    `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil atque
-  magnam veritatis molestias dignissimos, doloribus, nobis quibusdam
-  mollitia nemo impedit laudantium fuga doloremque`.split(" "); // Pisahkan berdasarkan spasi
+  const words = `code kanvasku,
+logika warnanya.
+Setiap baris yang kutulis
+adalah sapuan kuas
+menuju karya yang tak pernah selesai—
+karena selalu ada yang bisa diciptakan lagi.`.split(" "); // Pisahkan berdasarkan spasi
 
   const wordRefs = useRef<(HTMLParagraphElement | null)[]>([]); // Array untuk referensi setiap kata
   const handleMouseEnter = (index: number, event: React.MouseEvent) => {
