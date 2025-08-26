@@ -39,7 +39,7 @@ const Terminal = () => {
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value.trim());
+    setInputValue(e.target.value.toLowerCase().trim());
   };
 
   const handleKeyEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {

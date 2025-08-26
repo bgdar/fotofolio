@@ -46,8 +46,9 @@ export default function Contact() {
     const interval = setInterval(() => {
       setNextItem((prev) => (prev + 1) % dataItems.length);
     }, 3500);
+
     return () => clearInterval(interval);
-  }, [nextItem]);
+  }, []);
 
   return (
     <div id="contact" data-aos="fade" data-aos-duration="1000">

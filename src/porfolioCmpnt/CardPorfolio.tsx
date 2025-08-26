@@ -1,38 +1,54 @@
 import React, { useState } from "react";
 import ImgWithLoading from "../all-componets/imgWithLoading";
-import BacgroundTransparan from "../all-componets/bacgroundTransparan";
-import PopupInfo from "./popupInfo";
+
+import CardInfoFotofolio from "./cardInfoFotofolio";
 interface detail {
-  id: number;
+  index: number;
+
   judul: string;
   linkRepo?: string;
   linkDemo?: string;
+  language: React.JSX.Element;
   image: string;
   descripsi?: string;
 }
 
 const CardFotofolio: React.FC<detail> = ({
+  index,
   judul,
-  id,
+  language,
   linkRepo = "",
   linkDemo = "",
   image,
   descripsi = "my porfolio ",
 }) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
-  const [ispopupShow, setIspopupShow] = useState<boolean>(false);
+  // const [ispopupShow, setIspopupShow] = useState<boolean>(false);
+
+  // data trasltate hover
 
   const handleData = (isHover: boolean) => {
     setIsHovered(isHover);
   };
+
+  //   const handleHover = (index: number) => {
+  //   console.log("hover index : ", index);
+  //   // kiri
+  //   if (index === 0 || index == 1) {
+  //     setHoverPosition(100);
+  //   } else if (index == 2 || index == 3) {
+  //     setHoverPosition(400);
+  //   }
+  // };
+
   return (
     // margin top untuk memisah card agar tidak berdempet saat di mobile
-    <div className="w-full h-[300px] relative">
+    <div className="w-full h-[300px] mt-8 lg:mt-0 relative">
       {/* Container utama */}
       <div
         data-aos="fade-up"
         data-aos-anchor-placement="center-bottom"
-        className="bg-slate-200 h-full mt-1 rounded-lg overflow-hidden p-5 relative group"
+        className="  bg-slate-200 h-full mt-1 rounded-lg  p-5 relative group"
         onMouseEnter={() => handleData(true)}
         onMouseLeave={() => handleData(false)}
       >
@@ -41,25 +57,45 @@ const CardFotofolio: React.FC<detail> = ({
         <ImgWithLoading
           src={image}
           alt={judul}
-          addClass="w-full h-full object-cover mt-2"
+          addClass={`w-full  h-full object-cover mt-2 ${
+            isHovered ? "bg-gray-1000" : ""
+          }`}
         />
 
         {/* Overlay saat hover */}
-        <div className="absolute inset-0 p-5 bg-slate-400/90  opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div className="text-center text-white transition-all duration-300 group-hover:mt-0 mt-[20px] ">
-            <button
-              onClick={() => setIspopupShow(true)}
-              className="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg transition-colors duration-300"
+        <div
+          className={`
+    flex flex-col xl:flex-row
+    inset-0 p-5 opacity-0 group-hover:opacity-100
+    transition-opacity duration-300 absolute
+     w-full max-w-[150%] xl:w-[150%] 
+    ${
+      index === 0 || index === 2
+        ? "xl:-translate-x-[150px]"
+        : "xl:justify-around"
+    }
+  `}
+        >
+          <div className="text-center md:max-w-[50%] transition-all duration-300 group-hover:mt-0 ">
+            <div
+              className={`
+         text-center items-center absolute
+        ${index === 0 || index === 2 ? "  md:right-1/4  w-[150px]" : "  "}
+      `}
             >
-              Let see
-            </button>
-
-            <div className="">
-              <p className="text-zinc-700 mt-3  text-sm md:text-base lg:text-lg leading-relaxed tracking-wide font-mono">
-                {descripsi}
+              <p className=" bg-slate-400/90 font-semibold shadow-lg p-2 border-[5px] border-gray-300">
+                {judul}
               </p>
             </div>
           </div>
+          {isHovered && (
+            <CardInfoFotofolio
+              language={language}
+              index={index}
+              linkDemo={linkDemo}
+              linkRepo={linkRepo}
+            />
+          )}
         </div>
         {/* Elemen kedua (muncul dengan scale saat di-hover) */}
         <div
@@ -67,14 +103,16 @@ const CardFotofolio: React.FC<detail> = ({
             isHovered ? "scale-100 opacity-100" : "scale-50 opacity-0"
           }`}
         >
-          <p className="text-white font-semibold shadow-lg p-2 border-[5px] border-gray-300">
-            {judul}
-          </p>
+          <div className="p-4 h-full">
+            <p className="text-zinc-700 p-2 bg-slate-400/90  mt-3 text-sm md:text-base xl:text-lg leading-relaxed tracking-wide font-mono">
+              {descripsi}
+            </p>
+          </div>
         </div>
       </div>
 
       {/* popup yg muncul saat di click */}
-      {ispopupShow && id && (
+      {/* {ispopupShow && id && (
         <>
           <BacgroundTransparan />
           <div className="fixed w-[90vw] h-[90vh] lg:w-[50vw] lg:h-[60vh]  top-1/2 left-1/2 opacity-100 -translate-x-1/2 lg:-translate-y-1/2 transition-all duration-500 ease-in-out z-50">
@@ -90,24 +128,6 @@ const CardFotofolio: React.FC<detail> = ({
               setPopupShow={setIspopupShow}
             />
           </div>
-        </>
-      )}
-
-      {/* {ispopupShow && (
-        <>
-          <PopupInfo
-            dataItems={{
-              judul,
-              linkDemo,
-              linkRepo,
-
-              image,
-              descripsi,
-            }}
-            setPopupShow={setIspopupShow}
-          />
-
-          <BacgroundTransparan />
         </>
       )} */}
     </div>

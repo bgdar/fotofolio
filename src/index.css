@@ -21,7 +21,7 @@
 
 body {
   background-size: cover;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   /* Light mode */
   transition: all 1.5s ease-in-out;
 }

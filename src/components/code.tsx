@@ -1,9 +1,13 @@
 import CodeSkill from "../codeCmpnt/CodeSkill";
-import { useState } from "react";
-import { TbHandFingerRight } from "react-icons/tb";
+import React, { useState } from "react";
+import { TbBrandCpp, TbHandFingerRight } from "react-icons/tb";
 import CodeTextEditor from "../codeCmpnt/codeTextEditor";
 
 import { useGlobalState } from "../globalState";
+import { IoLogoCss3, IoLogoJavascript } from "react-icons/io5";
+import { FaHtml5, FaRust } from "react-icons/fa";
+import { SiPython, SiTypescript, SiZig } from "react-icons/si";
+import { FaGolang, FaJava } from "react-icons/fa6";
 
 export default function Code() {
   const [nextItem, setNextItem] = useState<number>(0);
@@ -46,11 +50,14 @@ export default function Code() {
             } text-start m-4 rounded-lg  p-2 shadow-lg shadow-slate-400 w-[100%] font-mono`}
           >
             <h3>
-              <img
-                src={dataSkil[nextItem].image}
+              {/* <img
+                src={dataSkil[nextItem].logo}
                 alt={dataSkil[nextItem].title}
                 className="inline-block w-8 h-8 mr-2"
-              />{" "}
+              />{" "}  */}
+              <div className="inline-block w-8 h-8 mr-2">
+                {dataSkil[nextItem].logo}
+              </div>
               main{dataSkil[nextItem].ekstension}
             </h3>
           </div>
@@ -101,7 +108,7 @@ export default function Code() {
 }
 
 type daftarSkill = {
-  image: string;
+  logo: React.JSX.Element;
   description: string;
   level: number; //tampilakan menjadi persentase
   source: string;
@@ -113,7 +120,9 @@ type daftarSkill = {
 
 const dataSkil: daftarSkill[] = [
   {
-    image: "./img/html.png",
+    logo: (
+      <FaHtml5 className="w-full h-full bg-gradient-to-tr from-orange-500 to-red-600" />
+    ),
     title: "HTML",
     language: "markup",
     ekstension: ".html",
@@ -122,13 +131,19 @@ const dataSkil: daftarSkill[] = [
     level: 80,
     source: "https://developer.mozilla.org/en-US/docs/Web/HTML",
     code: `<html>
+  <head>
+    <title>Hello HTML</title>
+  </head>
   <body>
     <h1>Hello, World!</h1>
+    <p> its hard</p>
   </body>
 </html>`,
   },
   {
-    image: "./img/css.png",
+    logo: (
+      <IoLogoCss3 className="w-full h-full bg-gradient-to-tr from-blue-400 to-blue-600" />
+    ),
     title: "CSS",
     language: "css",
     ekstension: ".css",
@@ -136,13 +151,19 @@ const dataSkil: daftarSkill[] = [
       "CSS digunakan untuk mengatur tampilan halaman web seperti warna, layout, dan animasi.",
     level: 75,
     source: "https://developer.mozilla.org/en-US/docs/Web/CSS",
-    code: `h1 {
-  color: blue;
-  font-size: 24px;
+    code: `body {
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+}
+
+h1 {
+  color: white;
+  text-align: center;
 }`,
   },
   {
-    image: "./img/js.png",
+    logo: (
+      <IoLogoJavascript className="w-full h-full text-yellow-400 g-gradient-to-tr from-yellow-300 to-yellow-500" />
+    ),
     title: "JavaScript",
     language: "javascript",
     ekstension: ".js",
@@ -150,10 +171,16 @@ const dataSkil: daftarSkill[] = [
       "JavaScript digunakan untuk memberikan interaktivitas dalam halaman web.",
     level: 45,
     source: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-    code: `const name = "dar"\nconsole.log("Hello, 'dar'!");`,
+    code: `const name = "Dar";
+function greet(user) {
+  console.log(\`Hello, \${user}!\`);
+}
+setTimeout(() => greet(name), 1000);`,
   },
   {
-    image: "./img/typescript.png",
+    logo: (
+      <SiTypescript className="w-full h-full bg-gradient-to-tr from-blue-400 to-blue-700" />
+    ),
     title: "TypeScript",
     language: "typescript",
     ekstension: ".ts",
@@ -163,10 +190,15 @@ const dataSkil: daftarSkill[] = [
     source: "https://www.typescriptlang.org/",
     code: `function greet(name: string): string {
   return \`Hello, \${name}!\`;
-}`,
+}
+
+const msg: string = greet("Typescript");
+console.log(msg);`,
   },
   {
-    image: "./img/python.png",
+    logo: (
+      <SiPython className="w-full h-full bg-gradient-to-tr from-yellow-400 to-blue-600" />
+    ),
     title: "Python",
     language: "python",
     ekstension: ".py",
@@ -174,11 +206,17 @@ const dataSkil: daftarSkill[] = [
       "Python adalah bahasa tingkat tinggi yang terkenal karena sintaksnya yang sederhana.",
     level: 30,
     source: "https://www.python.org/",
-    code: `print("Hello, Python!")\n\ndef display(name :str)->str:
-\treturn f"hello {name}"`,
+    code: `def greet(name: str) -> str:
+    return f"Hello, {name}"
+
+print(greet("Python"))
+for i in range(3):
+    print("Loop", i)`,
   },
   {
-    image: "./img/go.png",
+    logo: (
+      <FaGolang className="w-full h-full bg-gradient-to-tr from-cyan-400 to-sky-500" />
+    ),
     title: "Go",
     language: "go",
     ekstension: ".go",
@@ -187,15 +225,18 @@ const dataSkil: daftarSkill[] = [
     level: 20,
     source: "https://go.dev/",
     code: `package main
-
 import "fmt"
 
 func main() {
-  fmt.Println("Hello, Go!")
+  for i := 1; i <= 3; i++ {
+    fmt.Println("Hello Go", i)
+  }
 }`,
   },
   {
-    image: "./img/rust.png",
+    logo: (
+      <FaRust className="w-full h-full bg-gradient-to-tr from-orange-600 to-gray-900" />
+    ),
     title: "Rust",
     language: "rust",
     ekstension: ".rs",
@@ -204,11 +245,16 @@ func main() {
     level: 5,
     source: "https://www.rust-lang.org/",
     code: `fn main() {
-  println!("Hello, Rust!");
+  let nums = vec![1, 2, 3];
+  for n in nums {
+    println!("Rust says: {}", n);
+  }
 }`,
   },
   {
-    image: "./img/zig.png",
+    logo: (
+      <SiZig className="w-full h-full bg-gradient-to-tr from-yellow-300 to-orange-500" />
+    ),
     title: "Zig",
     language: "zig",
     ekstension: ".zig",
@@ -219,38 +265,48 @@ func main() {
     code: `const std = @import("std");
 
 pub fn main() void {
-  std.debug.print("Hello, Zig!\\n", .{});
+  for (0..3) |i| {
+    std.debug.print("Hello Zig {d}\\n", .{i});
+  }
 }`,
   },
   {
-    image: "./img/java.png",
+    logo: (
+      <TbBrandCpp className="w-full h-full bg-gradient-to-tr from-blue-500 to-indigo-700" />
+    ),
+    title: "C++",
+    language: "cpp",
+    ekstension: ".cpp",
+    description:
+      "C++ adalah bahasa pemrograman populer untuk sistem, game, dan aplikasi performa tinggi.",
+    level: 4.2,
+    source: "https://isocpp.org/",
+    code: `#include <iostream>
+using namespace std;
+
+int main() {
+  int x = 42;
+  int* ptr = &x;
+  cout << "Value: " << *ptr << endl;
+}`,
+  },
+  {
+    logo: (
+      <FaJava className="w-full h-full bg-gradient-to-tr from-orange-500 to-red-600 " />
+    ),
     title: "Java",
     language: "java",
     ekstension: ".java",
     description:
       "Java adalah bahasa OOP populer yang berjalan di JVM dan banyak digunakan di enterprise.",
-    level: 4.2,
+    level: 4,
     source: "https://www.java.com/en/",
     code: `public class Main {
   public static void main(String[] args) {
-    System.out.println("Hello, Java!");
+    for(int i=0;i<3;i++) {
+      System.out.println("Hello Java " + i);
+    }
   }
-}`,
-  },
-  {
-    image: "./img/cpp.png",
-    title: "C++",
-    language: "cpp",
-    ekstension: ".cpp",
-    description:
-      "C++ banyak digunakan dalam pengembangan game, sistem operasi, dan software performa tinggi.",
-    level: 1.5,
-    source: "https://isocpp.org/",
-    code: `#include <iostream>
-
-int main() {
-  std::cout << "Hello, C++!" << std::endl;
-  return 0;
 }`,
   },
 ];

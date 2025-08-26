@@ -1,7 +1,7 @@
-import ImgWithLoading from "../all-componets/imgWithLoading";
+// import ImgWithLoading from "../all-componets/imgWithLoading";
 
 type daftarSkill = {
-  image: string;
+  logo: React.JSX.Element;
   description: string;
   level: number; //tampilakan menjadi persentase
   source: string;
@@ -32,7 +32,7 @@ const ProfilCode: React.FC<ProfilSkillProps> = ({ item }) => {
         </div>
         <div>
           {/* <ImgWithLoading
-            src={item.image}
+            src={item.logo}
             alt={item.title}
             addClass={"w-32 object-cover"}
           /> */}
@@ -47,15 +47,16 @@ const ProfilCode: React.FC<ProfilSkillProps> = ({ item }) => {
         {/* {isLoaded ? (
         <> */}
         {/* <img
-          src={item.image}
+          src={item.logo}
           title={item.title}
           className="w-[160px] h-[160px] object-contain"
         /> */}
-        <ImgWithLoading
-          src={item.image}
+        {/* <ImgWithLoading
+          src={item.logo}
           alt={item.title}
           addClass="w-[160px] h-[160px] object-contain"
-        />
+        /> */}
+        <div className="w-[160px] h-[160px] object-contain">{item.logo}</div>
 
         {/* elemet hover  */}
         <div className="absolute inset-0 p-3 backdrop-blur-lg bg-slate-500/80 flex items-center justify-center opacity-0 scale-95 group-hover:scale-100 group-hover:opacity-100 transition-all ease-in-out duration-300">

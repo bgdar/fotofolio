@@ -15,7 +15,7 @@ const CodeTextEditor = ({ code, language }: CodeTextEditorProps) => {
   const { theme } = useGlobalState();
 
   return (
-    <div className="w-full h-56 p-4 rounded-lg overflow-auto scrollbar-hide  ">
+    <div className="w-full h-60 p-4 rounded-lg overflow-auto scrollbar-hide  ">
       <div
         className="w-full h-full max-h-56 p-4 rounded-lg bg-[#282c34] shadow-lg overflow-auto scrollbar-hide  text-sm"
         style={{
