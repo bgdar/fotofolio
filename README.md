@@ -38,14 +38,14 @@ https://github.com/user-attachments/assets/120204e4-c2a5-4a5a-a09c-9210fc0351b8
 ### other Technology
 
 | `Teknologi`                  |
-| ---------------------------- | --- |
+| ---------------------------- | 
 | **React**                    |
 | **Tailwind CSS**             |
 | **react-dom (18.3.1)**       |
 | **react-icons (5.4.0)**      |
 | **react-scroll (1.9.0)**     |
 | **animejs**                  |
-| **react-syntax-highlighter** |     |
+| **react-syntax-highlighter** |     
 
 
 
