@@ -36,16 +36,11 @@ const CardInfoFotofolio = ({
     fixed xl:static lg:bottom-10 bottom-0
     z-20 
     w-[90%] h-auto lg:w-[100px] lg:h-[200px] 
-   
-    
-    // geser horizontal hanya di lg ke atas
     ${
       index === 0 || index === 2
         ? "lg:translate-x-[-50px]"
-        : "lg:translate-x-[100px]"
+        : "lg:translate-x-[90px]"
     }
-
-    // di mobile, turunkan elemen
     translate-y-[50px] lg:translate-y-0
   `}
         style={{
@@ -88,7 +83,7 @@ const CardInfoFotofolio = ({
          : "bg-dark-gray text-white "
      }  rounded-full border-2 border-slate-500 size-12 
       hover:scale-125 transition-transform duration-300 ease-in-out
-      ${index === 0 || index === 2 ? "lg:-translate-x-7" : "lg:translate-x-7"}
+      ${index === 0 || index === 2 ? "lg:-translate-x-7 " : "lg:translate-x-7"}
     `}
               >
                 {" "}

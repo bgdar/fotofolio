@@ -1,43 +1,69 @@
-import { TypeAnimation } from "react-type-animation";
-import React, { useState } from "react";
-import ImgWithLoading from "../all-componets/imgWithLoading";
+// ini tidak saya gunakan lagi
+// import { TypeAnimation } from "react-type-animation";
 
-import { useGlobalState } from "../globalState";
+import  { useEffect, useRef } from "react";
+import ImgWithLoading from "../all-componets/imgWithLoading";
+import anime from "animejs";
+
+// import { useGlobalState } from "../globalState";
+    // fungsi buat split huruf ke dalam span
+ // Split teks ke dalam span
+  const splitText = (text: string ,  handleHover: (element: HTMLElement) => void) =>
+    text.split("").map((char, i) => (
+      <span
+        key={i}
+        className="inline-block cursor-pointer"
+        onMouseEnter={(e) => handleHover(e.currentTarget)}
+        onTouchStart={(e) => handleHover(e.currentTarget)}
+      >
+        {char === " " ? "\u00A0" : char}
+      </span>
+    ));
 
 export default function Banner() {
   //membuat pergerakan pada mouse
-  const [pos, setPos] = useState({ x: 0, y: 0 });
+  // const circleRef = useRef<HTMLDivElement | null>(null);
 
-  const { theme } = useGlobalState();
+  // const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  //   const {  left , top } = e.currentTarget.getBoundingClientRect();
+  //   const x = e.clientX - left;
+  //   const y = e.clientY - top;
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const { left, top } = e.currentTarget.getBoundingClientRect();
-    setPos({
-      x: e.clientX - left,
-      y: e.clientY - top,
+  //   // Anime.js animasi posisi lingkaran
+  //   anime({
+  //     targets: circleRef.current,
+  //     translateX: x - 28, // offset setengah width (h-14 = 56px)
+  //     translateY: y - 28, // offset setengah height
+  //     duration: 500,
+  //     easing: "easeOutExpo",
+  //   });
+  // };
+
+  const textAnime = useRef<HTMLDivElement>(null);
+
+    // Fungsi animasi per huruf saat hover
+  const handleHover = (el: HTMLElement) => {
+    anime({
+      targets: el,
+      translateY: [-20, 0], // loncat ke atas lalu balik
+      easing: "easeOutElastic(1, .6)",
+      duration: 500,
     });
-    //cek jika keluar dari element maka kembalikan ke posisi awal
-    if (
-      e.clientX < left ||
-      e.clientX > left + e.currentTarget.clientWidth ||
-      e.clientY < top ||
-      e.clientY > top + e.currentTarget.clientHeight
-    ) {
-      setPos({ x: 0, y: 0 });
-    }
   };
 
   return (
-    <div className="relative overflow-hidden" onMouseMove={handleMouseMove}>
+    <div className="relative overflow-hidden h-screen w-screen" 
+    // onMouseMove={handleMouseMove}
+    >
       {/* border yg mengikuti banner yg di sebelah kiri */}
-      <div
-        style={{ top: pos.y, left: pos.x }}
+      {/* <div
+        ref={circleRef}
         className="absolute h-14 w-14 rounded-full bg-slate-500/50 border-4 border-white/30 shadow-xl 
              flex items-center justify-center text-white font-semibold 
              backdrop-blur-lg opacity-30  duration-300"
       >
         <span className="text-sm drop-shadow-lg">Hello </span>
-      </div>
+      </div> */}
 
       {/* border yg mengikuti banner yg di sebelah kiri */}
       {/* persegi di sebelah kanan */}
@@ -50,7 +76,7 @@ export default function Banner() {
         className="section relative  container mx-auto max-w-[500px] px-2 items-center z-10"
       >
         {/* Lingkaran di Ujung Atas Kanan */}
-        <div className="w-full ">
+        <div className="w-full h-full mt-8 ">
           <div className="h-[180px] -z-30 w-[180px] mx-auto rounded-full transition ">
             {/* <img
               src="./img/my-custom.png"
@@ -63,7 +89,11 @@ export default function Banner() {
               addClass="border-sky-100 border-4"
             />
           </div>
-          <div className="block text-center from-neutral-700 font-bold ">
+<div className="text-center mt-4 text-2xl sm:text-3xl md:text-4xl font-bold  bg-clip-text ">
+  <p ref={textAnime} > {splitText("Hello Word",handleHover)}</p>
+</div>
+
+          {/* <div className="block text-center from-neutral-700 font-bold ">
             <TypeAnimation
               sequence={[
                 "👋 Hello, I am a developer",
@@ -91,11 +121,13 @@ export default function Banner() {
               }}
               className="custom-animation" // Optional: Add custom class for further styling
             />
-          </div>
-          <div className="max-w-[750px] text-center tracking-wide font-mono ">
-            Mencintai proses mengubah ide menjadi nyata, membangun pengalaman
-            yang hidup lewat kode
-          </div>
+          </div> */}
+      {/* <div className="max-w-[550px] md:max-w-[750px] mx-auto text-center tracking-wide font-mono 
+  text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed px-4">
+  Mencintai proses mengubah ide menjadi nyata, membangun pengalaman
+  yang hidup lewat kode
+</div> */}
+
         </div>
       </div>
     </div>

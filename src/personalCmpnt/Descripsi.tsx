@@ -28,7 +28,7 @@ karena selalu ada yang bisa diciptakan lagi.`.split(" ");
         theme === "dark"
           ? ["#facc15", "#fde047", "#fef9c3"] // gold gradient untuk dark
           : ["#2563eb", "#3b82f6", "#93c5fd"], // biru soft gradient untuk light
-      duration: 600,
+
       easing: "easeOutElastic(1, .6)",
       complete: () => {
         anime({
@@ -38,22 +38,23 @@ karena selalu ada yang bisa diciptakan lagi.`.split(" ");
           translateX: 0,
           translateY: 0,
           color: theme === "dark" ? "#f9fafb" : "#1f2937", // balik ke default (white/gray-800)
-          duration: 800,
-          easing: "easeOutQuad",
+
         });
       },
     });
   };
 
+
   return (
     <div
       className={`flex flex-wrap gap-2 p-6 rounded-xl shadow-xl transition-colors duration-500
-        ${
-          theme === "dark"
-            ? "bg-gradient-to-r from-gray-800 via-gray-700 to-gray-900"
-            : "bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300"
+        ${theme === "dark"
+          ? "bg-gradient-to-r from-gray-800 via-gray-700 to-gray-900"
+          : "bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300"
         }`}
     >
+
+
       {words.map((word, index) => (
         <span
           key={index}

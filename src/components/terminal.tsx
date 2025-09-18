@@ -60,8 +60,8 @@ const Terminal = () => {
       }
       if (value == "exit" || (value == "close" && isMaximized == true)) {
         e.currentTarget.value = "";
-        // toggleShowTerminal(); //tutup terminal
-        // setIsMaximized(false);
+        toggleShowTerminal(); //tutup terminal
+        setIsMaximized(false);
         setShowData([""]); //clear semua data
       }
       if (value == "open" && isMaximized == false) {

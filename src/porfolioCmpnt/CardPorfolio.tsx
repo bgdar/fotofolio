@@ -4,7 +4,6 @@ import ImgWithLoading from "../all-componets/imgWithLoading";
 import CardInfoFotofolio from "./cardInfoFotofolio";
 interface detail {
   index: number;
-
   judul: string;
   linkRepo?: string;
   linkDemo?: string;
@@ -43,7 +42,7 @@ const CardFotofolio: React.FC<detail> = ({
 
   return (
     // margin top untuk memisah card agar tidak berdempet saat di mobile
-    <div className="w-full h-[300px] mt-8 lg:mt-0 relative">
+    <div className="w-full h-[300px] mt-10 lg:mt-0 relative">
       {/* Container utama */}
       <div
         data-aos="fade-up"
@@ -54,33 +53,32 @@ const CardFotofolio: React.FC<detail> = ({
       >
         {/* Gambar */}
         {/* <img src={image} alt="" className="w-full h-full object-cover mt-2" /> */}
-        <ImgWithLoading
-          src={image}
-          alt={judul}
-          addClass={`w-full  h-full object-cover mt-2 ${
-            isHovered ? "bg-gray-1000" : ""
-          }`}
-        />
+    <ImgWithLoading
+  src={image}
+  alt={judul}
+   addClass={`w-full h-full object-cover mt-2 transition-opacity duration-300 group-hover:opacity-50`}
+/>
 
         {/* Overlay saat hover */}
         <div
           className={`
-    flex flex-col xl:flex-row
-    inset-0 p-5 opacity-0 group-hover:opacity-100
+             opacity-0
+    flex flex-col lg:flex-row 0
+    inset-0 p-5  group-hover:opacity-100
     transition-opacity duration-300 absolute
-     w-full max-w-[150%] xl:w-[150%] 
+     w-full max-w-[150%] lg:w-[150%] 
     ${
       index === 0 || index === 2
-        ? "xl:-translate-x-[150px]"
-        : "xl:justify-around"
+        ? "lg:-translate-x-[50px] xl:lg:-translate-x-[150px]  "
+        : "lg:justify-around"
     }
   `}
         >
-          <div className="text-center md:max-w-[50%] transition-all duration-300 group-hover:mt-0 ">
+          <div className="text-center flex justify-center  lg:max-w-[50%] transition-all duration-300 group-hover:mt-0 ">
             <div
               className={`
-         text-center items-center absolute
-        ${index === 0 || index === 2 ? "  md:right-1/4  w-[150px]" : "  "}
+        absolute
+        ${index === 0 || index === 2 ? "  right-1/4 w-[150px]" : ""}
       `}
             >
               <p className=" bg-slate-400/90 font-semibold shadow-lg p-2 border-[5px] border-gray-300">
@@ -104,7 +102,7 @@ const CardFotofolio: React.FC<detail> = ({
           }`}
         >
           <div className="p-4 h-full">
-            <p className="text-zinc-700 p-2 bg-slate-400/90  mt-3 text-sm md:text-base xl:text-lg leading-relaxed tracking-wide font-mono">
+            <p className="text-zinc-700 p-2 bg-slate-400/90  mt-3 text-sm lg:text-base xl:text-lg leading-relaxed tracking-wide font-mono">
               {descripsi}
             </p>
           </div>
