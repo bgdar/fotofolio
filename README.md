@@ -1,11 +1,17 @@
 # Hey, I'm dar 👋
 
 <div align="center"> 
-[![Portfolio](https://img.shields.io/badge/Portfolio-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)](https://fotofolio-six.vercel.app/)
-[![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/bgdar)
 
+<a href="https://fotofolio-six.vercel.app/">
+  <img src="https://img.shields.io/badge/Portfolio-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
+</a>
+&nbsp;
+<a href="https://github.com/bgdar">
+  <img src="https://img.shields.io/badge/GitHub-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+</a>
 </div>
 
+## Tect stack
 <p align="center">
   <a href="https://skillicons.dev" target="_blank" rel="noopener noreferrer">
     <img
@@ -15,6 +21,7 @@
   </a>
 </p>
 
+### demo app 
 https://github.com/user-attachments/assets/120204e4-c2a5-4a5a-a09c-9210fc0351b8
 
 ### About Me 🧑‍💻
@@ -44,8 +51,9 @@ https://github.com/user-attachments/assets/120204e4-c2a5-4a5a-a09c-9210fc0351b8
 
 <div align="center">
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=bgdar&show_icons=true&theme=radical)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=bgdar&layout=compact&theme=radical)
+  <img src="https://github-readme-stats.vercel.app/api?username=bgdar&show_icons=true&theme=radical" alt="GitHub Stats" />
+  <br>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=bgdar&layout=compact&theme=radical" alt="Top Languages" />
 
 </div>
 
