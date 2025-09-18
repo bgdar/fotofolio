@@ -1,5 +1,15 @@
 # Hey, I'm dar 👋
 
+## Tect stack
+<p align="center">
+  <a href="https://skillicons.dev" target="_blank" rel="noopener noreferrer">
+    <img
+      src="https://skillicons.dev/icons?i=typescript,react,tailwindcss,animejs&perline=4"
+      alt="Stack: Typescript, React, Tailwind CSS, Anime.js"
+    />
+  </a>
+</p>
+
 <div align="center"> 
 
 <a href="https://fotofolio-six.vercel.app/">
@@ -10,16 +20,6 @@
   <img src="https://img.shields.io/badge/GitHub-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
 </a>
 </div>
-
-## Tect stack
-<p align="center">
-  <a href="https://skillicons.dev" target="_blank" rel="noopener noreferrer">
-    <img
-      src="https://skillicons.dev/icons?i=typescript,react,tailwindcss,animejs&perline=4"
-      alt="Stack: Typescript, React, Tailwind CSS, Anime.js"
-    />
-  </a>
-</p>
 
 ### demo app 
 https://github.com/user-attachments/assets/120204e4-c2a5-4a5a-a09c-9210fc0351b8
@@ -47,15 +47,7 @@ https://github.com/user-attachments/assets/120204e4-c2a5-4a5a-a09c-9210fc0351b8
 | **animejs**                  |
 | **react-syntax-highlighter** |     |
 
-### GitHub Stats
 
-<div align="center">
-
-  <img src="https://github-readme-stats.vercel.app/api?username=bgdar&show_icons=true&theme=radical" alt="GitHub Stats" />
-  <br>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=bgdar&layout=compact&theme=radical" alt="Top Languages" />
-
-</div>
 
 ### Keterangan
 
